@@ -1,0 +1,266 @@
+<section id="intro">
+  <br />
+  <hgroup>
+    <h1>Introduction to federated learning</h1>
+    <p>A decentralized approach to AI</p>
+  </hgroup>
+
+  <div class="grid">
+    <div>
+      <p>
+        Machine learning has become a cornerstone of modern digital systems, enabling applications to make data-driven decisions, automate tasks, and enhance user experiences.
+      </p>
+      <p>
+        Traditionally, machine learning follows a centralized model. This approach involves collecting data from various sources into a single, centralized repository, typically in a cloud environment or a dedicated data center.
+      </p>
+      <p>
+        Then, advanced algorithms are applied to this consolidated dataset, training predictive models that can be deployed to make decisions based on new incoming data.
+      </p>
+    </div>
+    <div>
+      <p>
+        However, the centralized machine learning paradigm is facing growing challenges. The explosion of connected devices, sensors, and distributed data sources has led to an exponential increase in the volume and complexity of data being
+        generated.
+      </p>
+      <p>
+        At the same time, concerns around privacy, security, and regulatory compliance have made it increasingly difficult to freely move and consolidate data from different sources.
+      </p>
+      <p>
+        The data needed to train effective machine learning models is often distributed across organizations, devices, or clients, making centralization challenging due to privacy risks and high transfer costs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="de-central">
+  <figure>
+    <img src="https://svgshare.com/i/19Ux.svg" alt="fl" />
+  </figure>
+</section><br />
+
+<section id="federated-learning">
+  <h2>Federated learning</h2>
+  <div class="grid">
+    <div>
+      <p>
+        Federated learning (FL) is a decentralized approach that tackles the issues of centralized machine learning by allowing models to be trained on data distributed across various locations without moving the data.
+      </p>
+    </div>
+    <div>
+      <p>
+        Instead, FL moves the computation to where the data exists, enabling the creation of strong, globally-informed models while preserving data privacy and security.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="how-fl-works">
+  <h3>How federated learning works</h3>
+  <p>
+    In federated learning, AI models are trained across multiple devices or servers (called client nodes) without needing to move the data off those devices. Here’s a simplified breakdown of how it works:
+  </p>
+
+  <div class="grid">
+    <div>
+      <article>
+        <b>1. Starting the global model</b><br />
+        The process begins with a global model on a central server. This could be any type of machine learning model, like a neural network or decision tree.
+      </article>
+    </div>
+    <div>
+      <article>
+        <b>2. Sending the model to clients</b> <br />
+        The server sends the global model’s parameters to a group of selected client nodes. Each client uses its own local dataset, which stays securely on the device.
+      </article>
+    </div>
+  </div>
+  <div class="grid">
+    <div>
+      <article>
+        <b>3. Local training</b> <br />
+        Each client trains the model using its local data, adjusting the model’s parameters based on what it learns. This training is done for a few rounds, not until complete accuracy is reached.
+      </article>
+    </div>
+    <div>
+      <article>
+        <b>4. Combining the updates</b> <br />
+        The updated models from each client are sent back to the central server, where they are combined. A common approach is called Federated Averaging, where the server takes a weighted average of the updates from each client.
+      </article>
+    </div>
+  </div>
+
+  <p>
+    Finally, the improved global model is sent back to the clients for further training. This cycle continues until the model reaches a satisfactory level of accuracy.
+  </p>
+</section>
+
+<section id="cross-silo-device">
+  <h2>Cross-silo and cross-device</h2>
+  <p>
+    Federated learning is often discussed in terms of the technology behind it, such as cross-silo and cross-device approaches or horizontal and vertical.
+  </p>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Cross-silo</h5>
+          <p>
+            Cross-silo federated learning typically involves collaboration between organizations (silos), each of which holds its own dataset. This can be seen in contexts like healthcare or finance, where different organizations train a
+            shared model using their own data without exposing it to others.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Cross-device</h5>
+          <p>
+            Cross-device federated learning refers to training models across a vast number of devices, such as smartphones or IoT devices, where each device has a small local dataset. This scenario involves a large number of participants
+            (devices), each contributing to the training process.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Horizontal</h5>
+          <p>
+            Horizontal federated learning is when different parties have datasets that share the same feature space, meaning the data has the same types of information or characteristics (e.g., different hospitals with similar patient
+            data). This type is most common in both cross-silo and cross-device scenarios.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Vertical</h5>
+          <p>
+            Vertical federated learning is when different organizations have datasets with different features for the same samples. For example, a bank and an e-commerce platform might collaborate, where the bank has financial data, and the
+            e-commerce platform has purchase history, both related to the same customers.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="data-owner">
+  <h2>A data ownership perspective</h2>
+  <p>
+    Federated learning can also be understood from a business and collaboration perspective. It focuses on how it applies in different business contexts and helps deal with challenges related to data privacy, regulations, and managing
+    different stakeholders.
+  </p>
+  <div class="grid">
+    <div>
+      <article>
+        <figure>
+          <img src="https://svgshare.com/i/19W4.svg" alt="Data 1" />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Single model & data owner</h5>
+
+          <p>
+            The simplest form of federated learning involves a single company that owns both the machine learning model and the data. This setup simplifies implementation, especially when centralizing data isn’t possible due to technical
+            challenges or privacy regulations. This approach is useful for companies that need to make use of their distributed data without centralizing it, especially when dealing with privacy or technical restrictions.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <figure>
+          <img src="https://svgshare.com/i/19WM.svg" alt="Data 2" />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Vendor-to-customer</h5>
+          <p>
+            Vendors train machine learning models on customer-owned data. Traditionally, this required customer consent and data centralization. Federated Learning (FL) offers a more privacy-friendly approach, allowing vendors to develop
+            intelligent tools and services without directly accessing sensitive information. This is particularly useful when customers are reluctant to share data, enabling smarter services while maintaining data privacy.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <figure>
+          <img src="https://svgshare.com/i/19W5.svg" alt="Data 3" />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Industry collaborations</h5>
+          <p>
+            An interesting application of federated learning is industry-wide collaboration. Here, multiple companies, even competitors, work together to solve shared problems. Federated learning allows them to create joint models without
+            sharing sensitive data. This approach is valuable when competitors need to work together on common challenges or when they want to develop a powerful model together to gain a competitive advantage.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="challenges">
+  <h2>Challenges and considerations</h2>
+  <p>
+    Federated learning introduces a unique set of challenges that must be carefully managed to ensure the effectiveness and security of the learning process across distributed environments.
+  </p>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Complexity and coordination</h5>
+          <p>
+            Federated learning introduces added complexity compared to traditional machine learning. It involves training models across multiple devices or servers, each with its own data. This requires careful coordination of machine
+            learning operations (MLOps) to ensure efficient distribution and aggregation of model updates, reliable communication between nodes, and robust security throughout the process.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Heterogeneity of systems and data</h5>
+          <p>
+            In FL, client devices can vary significantly in terms of hardware capabilities, software environments, and data quality. Additionally, the data on these devices is often non-IID (not independent and identically distributed),
+            meaning it may not represent the overall population. This requires careful algorithm design, thoughtful aggregation of updates, and strategies to manage the variability in both systems and data.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Scalability</h5>
+          <p>
+            Scalability Federated learning systems must scale efficiently as the number of participating devices increases. Managing thousands or millions of devices simultaneously introduces challenges in coordinating updates, aggregating
+            models, and handling device failures or dropouts.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Privacy and data leakage</h5>
+          <p>
+            Although federated learning enhances privacy by keeping data on client devices, there is still a risk of data leakage through model updates. Adversaries could attempt to infer private information from the gradients or updates
+            shared during the training process. Safeguarding against such risks is crucial.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="our-approach">
+  <p>
+    <i>Learn more about our approach to scalable and secure federated learning <a href="framework.html">here »</a>. </i>
+  </p>
+</section>
