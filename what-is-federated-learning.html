@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css"/>
+    <link rel="icon" type="image/x-icon" href="https://lh3.googleusercontent.com/pw/AP1GczOGx30wdvWTE6tEqScXJ9xu3cvKu9L8SHZT466YqgSWNlZuAxDlLibaSlbwnGQwsj8b4w4sjCPYnb6hPUGWRohY3f0Wbf5Z4RZdBk6TpdVE1AEyBQ_48k2pK9kW5Y7zGYoa1Vbtsuru-oIKu4GpKucD=w32-h32-s-no-gm?authuser=0"/>
+    <link rel="icon" sizes="192x192" href="https://lh3.googleusercontent.com/pw/AP1GczNIltUVyg6K5Gv2vOelHIv7ZSiuy1rWdWljy5U4vjeeAIpKgp-3vc-iskHx_YoqFsKNhNYnbNHpBog5y_W6lSMVDHFtkioGV2xEo76qkMUu39UqKSc06EPjxG-yLYKvx2dMymTto72_EE3etkjJDUOH=w192-h192-s-no-gm?authuser=0">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPm5GpNnyZdcIw9kuWZFEdbbVqNMne7IYq8WoSxevmcVdxddjwMAeIZQVkwdApocm5lMQKJmsMHilrfarYUa0Ce_EMNNWn8M8jrurXtnyArwhpFHxq-WYbcAQoLn86rVRkm02qJS94rkDtG_8DkIJlL=w180-h180-s-no-gm?authuser=0" />
+    <!--- Fix robots.txt and sitemap.xml when record are set at DNS --->
+    <!-- Page specific Head below -->
+    <!--- <link rel="canonical" href="https://www.scaleoutsystems.com/"/> --->
+    <meta property="og:title" content="Scaleout - From R&D to real-world federated learning" />
+    <meta property="og:description" content="The FEDn framework enables seamless development and deployment of federated learning applications, from local proofs-of-concept to distributed real-world settings." />
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczP4v3TQ6jSYsB0aaj_1frUDueOnf5iyo4zD6mYP7zvLym44zS4CKkjtOSgzweUu0EKej2xJz5vW62EUtiuoJ7XpH2PGBB9IlcWIwxMdOWFzS4SEY2C_ivEYufhDXpZkWSGaqgMixpEDaVAnYiq0JWLK=w1200-h759-s-no-gm?authuser=0" />
+    <meta property="og:url" content="https://www.scaleoutsystems.com/" />
+    <title>Scaleout - From R&D to real-world federated learning</title>
+    <meta name="description" content="The FEDn framework enables development and deployment of federated learning applications, from proofs-of-concept to distributed real-world settings.">
+    <head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <figure>
+              <a href="index.html" title="Return to homepage" aria-label="Home" role="link">
+                <svg width="54" height="28" viewBox="0 0 46 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M27.177 17.7031L28.8523 16.0705L29.181 16.3909C30.3765 17.5559 31.9768 18.216 33.6854 18.216C35.3987 18.216 36.9974 17.5795 38.1883 16.3926C39.3835 15.2276 40.0632 13.666 40.0632 12C40.0632 10.3296 39.4098 8.7714 38.1917 7.61091C36.9964 6.44587 35.3943 5.78395 33.6854 5.78395C31.9721 5.78395 30.3755 6.41867 29.1847 7.60549L18.4956 18.0223C16.8353 19.6403 14.6494 20.51 12.3146 20.51C9.97851 20.51 7.7639 19.6111 6.13361 18.0223C4.47336 16.4044 3.58127 14.2746 3.58127 12C3.58127 9.72417 4.50336 7.56636 6.13361 5.97764C7.7939 4.35966 9.97975 3.48999 12.3146 3.48999C14.6507 3.48999 16.8653 4.38888 18.4956 5.97764L18.8231 6.29683L17.1478 7.92948L16.8191 7.6091C15.6236 6.44407 14.0234 5.78395 12.3146 5.78395C10.6012 5.78395 9.00276 6.42048 7.81195 7.60733C6.61644 8.77239 5.93686 10.334 5.93686 12C5.93686 13.6704 6.59037 15.2286 7.80827 16.3891C9.00375 17.5541 10.6058 18.216 12.3146 18.216C14.0279 18.216 15.6246 17.5813 16.8154 16.3945L27.5045 5.97764C29.1648 4.35966 31.3507 3.48999 33.6854 3.48999C36.0217 3.48999 38.2363 4.38888 39.8665 5.97764C41.5269 7.59558 42.419 9.72538 42.419 12C42.419 14.2758 41.4968 16.4336 39.8665 18.0223C38.2363 19.6111 36.0217 20.51 33.6854 20.51C31.3494 20.51 29.1348 19.6111 27.5045 18.0223L27.177 17.7031ZM24.6439 20.1717L26.3192 18.539L26.6479 18.8594C30.5433 22.6555 36.8577 22.6533 40.7224 18.86C44.6184 15.0634 44.6165 8.90788 40.7236 5.14116C38.8305 3.29619 36.3564 2.29397 33.6854 2.29397C31.0144 2.29397 28.5412 3.29562 26.6479 5.14059L15.9625 15.5538C15.0015 16.4904 13.6892 17.02 12.3146 17.02C10.9399 17.02 9.62768 16.4904 8.66667 15.5538C7.70565 14.6173 7.16247 13.3389 7.16247 12C7.16247 10.6611 7.70565 9.38269 8.66667 8.44618C9.62768 7.50961 10.9399 6.97999 12.3146 6.97999C13.6892 6.97999 15.0015 7.50961 15.9625 8.44618L16.29 8.76538L14.6147 10.398L14.286 10.0776C13.759 9.56411 13.061 9.27395 12.3146 9.27395C11.5682 9.27395 10.8701 9.56411 10.3431 10.0776C9.81616 10.5912 9.51807 11.2718 9.51807 12C9.51807 12.7282 9.81616 13.4088 10.3431 13.9223C10.8701 14.4359 11.5682 14.7261 12.3146 14.7261C13.061 14.7261 13.759 14.4359 14.286 13.9223L24.9714 3.50912C27.3009 1.23896 30.3892 3.07368e-06 33.6854 3.07368e-06C36.9816 3.07368e-06 40.07 1.23896 42.3994 3.50912C44.7289 5.77926 46 8.78845 46 12C46 15.2116 44.7289 18.2207 42.3994 20.4909C40.009 22.8206 36.8611 24 33.6854 24C30.5396 24 27.3625 22.821 24.9714 20.4909L24.6439 20.1717ZM21.3561 3.82832L19.6808 5.46096L19.3521 5.14059C15.4567 1.34445 9.14231 1.34668 5.2776 5.14002C1.38174 8.93662 1.38344 15.0921 5.27642 18.8588C7.16965 20.7038 9.64347 21.706 12.3145 21.706C14.9856 21.706 17.4589 20.7044 19.3521 18.8594L30.0375 8.44618C30.9986 7.50961 32.3109 6.97996 33.6854 6.97996C35.0602 6.97996 36.3722 7.50961 37.3333 8.44618C38.2945 9.38269 38.8376 10.6611 38.8376 12C38.8376 13.3389 38.2945 14.6173 37.3333 15.5538C36.3722 16.4904 35.0602 17.02 33.6854 17.02C32.3109 17.02 30.9986 16.4904 30.0375 15.5538L29.71 15.2346L31.3854 13.602L31.7139 13.9223C32.2409 14.4359 32.9392 14.7261 33.6854 14.7261C34.432 14.7261 35.1299 14.4359 35.6569 13.9223C36.1839 13.4088 36.4818 12.7281 36.4818 12C36.4818 11.2718 36.1839 10.5912 35.6569 10.0776C35.1299 9.56411 34.432 9.27395 33.6854 9.27395C32.9392 9.27395 32.2409 9.56411 31.7139 10.0776L21.0286 20.4909C18.6991 22.761 15.6108 24 12.3145 24C9.0183 24 5.93002 22.761 3.6005 20.4909C1.27103 18.2207 0 15.2116 0 12C0 8.78845 1.27103 5.77926 3.6005 3.50912C5.93002 1.23895 9.0183 0 12.3145 0C15.6108 0 18.6991 1.23895 21.0286 3.50912L21.3561 3.82832Z" fill="#B7B8BB"/>
+                </svg>
+              </a>
+            </figure>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="framework.html" class="contrast">Framework</a>&nbsp;&ensp;
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp;&ensp;
+            <a href="projects.html" class="contrast">Projects</a>&nbsp;&ensp;
+            <a href="about.html" class="contrast">About</a>&nbsp;&ensp;
+            <a href="pricing.html" class="contrast">Pricing</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+    
+      <section id="intro">
+  <br />
+  <hgroup>
+    <h1>Introduction to federated learning</h1>
+    <p>A decentralized approach to AI</p>
+  </hgroup>
+
+  <div class="grid">
+    <div>
+      <p>
+        Machine learning has become a cornerstone of modern digital systems, enabling applications to make data-driven decisions, automate tasks, and enhance user experiences.
+      </p>
+      <p>
+        Traditionally, machine learning follows a centralized model. This approach involves collecting data from various sources into a single, centralized repository, typically in a cloud environment or a dedicated data center.
+      </p>
+      <p>
+        Then, advanced algorithms are applied to this consolidated dataset, training predictive models that can be deployed to make decisions based on new incoming data.
+      </p>
+    </div>
+    <div>
+      <p>
+        However, the centralized machine learning paradigm is facing growing challenges. The explosion of connected devices, sensors, and distributed data sources has led to an exponential increase in the volume and complexity of data being
+        generated.
+      </p>
+      <p>
+        At the same time, concerns around privacy, security, and regulatory compliance have made it increasingly difficult to freely move and consolidate data from different sources.
+      </p>
+      <p>
+        The data needed to train effective machine learning models is often distributed across organizations, devices, or clients, making centralization challenging due to privacy risks and high transfer costs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="de-central">
+  <figure>
+    <img src="https://svgshare.com/i/19Ux.svg" alt="fl" />
+  </figure>
+</section><br />
+
+<section id="federated-learning">
+  <h2>Federated learning</h2>
+  <div class="grid">
+    <div>
+      <p>
+        Federated learning (FL) is a decentralized approach that tackles the issues of centralized machine learning by allowing models to be trained on data distributed across various locations without moving the data.
+      </p>
+    </div>
+    <div>
+      <p>
+        Instead, FL moves the computation to where the data exists, enabling the creation of strong, globally-informed models while preserving data privacy and security.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="how-fl-works">
+  <h3>How federated learning works</h3>
+  <p>
+    In federated learning, AI models are trained across multiple devices or servers (called client nodes) without needing to move the data off those devices. Here’s a simplified breakdown of how it works:
+  </p>
+
+  <div class="grid">
+    <div>
+      <article>
+        <b>1. Starting the global model</b><br />
+        The process begins with a global model on a central server. This could be any type of machine learning model, like a neural network or decision tree.
+      </article>
+    </div>
+    <div>
+      <article>
+        <b>2. Sending the model to clients</b> <br />
+        The server sends the global model’s parameters to a group of selected client nodes. Each client uses its own local dataset, which stays securely on the device.
+      </article>
+    </div>
+  </div>
+  <div class="grid">
+    <div>
+      <article>
+        <b>3. Local training</b> <br />
+        Each client trains the model using its local data, adjusting the model’s parameters based on what it learns. This training is done for a few rounds, not until complete accuracy is reached.
+      </article>
+    </div>
+    <div>
+      <article>
+        <b>4. Combining the updates</b> <br />
+        The updated models from each client are sent back to the central server, where they are combined. A common approach is called Federated Averaging, where the server takes a weighted average of the updates from each client.
+      </article>
+    </div>
+  </div>
+
+  <p>
+    Finally, the improved global model is sent back to the clients for further training. This cycle continues until the model reaches a satisfactory level of accuracy.
+  </p>
+</section>
+
+<section id="cross-silo-device">
+  <h2>Cross-silo and cross-device</h2>
+  <p>
+    Federated learning is often discussed in terms of the technology behind it, such as cross-silo and cross-device approaches or horizontal and vertical.
+  </p>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Cross-silo</h5>
+          <p>
+            Cross-silo federated learning typically involves collaboration between organizations (silos), each of which holds its own dataset. This can be seen in contexts like healthcare or finance, where different organizations train a
+            shared model using their own data without exposing it to others.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Cross-device</h5>
+          <p>
+            Cross-device federated learning refers to training models across a vast number of devices, such as smartphones or IoT devices, where each device has a small local dataset. This scenario involves a large number of participants
+            (devices), each contributing to the training process.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Horizontal</h5>
+          <p>
+            Horizontal federated learning is when different parties have datasets that share the same feature space, meaning the data has the same types of information or characteristics (e.g., different hospitals with similar patient
+            data). This type is most common in both cross-silo and cross-device scenarios.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Vertical</h5>
+          <p>
+            Vertical federated learning is when different organizations have datasets with different features for the same samples. For example, a bank and an e-commerce platform might collaborate, where the bank has financial data, and the
+            e-commerce platform has purchase history, both related to the same customers.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="data-owner">
+  <h2>A data ownership perspective</h2>
+  <p>
+    Federated learning can also be understood from a business and collaboration perspective. It focuses on how it applies in different business contexts and helps deal with challenges related to data privacy, regulations, and managing
+    different stakeholders.
+  </p>
+  <div class="grid">
+    <div>
+      <article>
+        <figure>
+          <img src="https://svgshare.com/i/19W4.svg" alt="Data 1" />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Single model & data owner</h5>
+
+          <p>
+            The simplest form of federated learning involves a single company that owns both the machine learning model and the data. This setup simplifies implementation, especially when centralizing data isn’t possible due to technical
+            challenges or privacy regulations. This approach is useful for companies that need to make use of their distributed data without centralizing it, especially when dealing with privacy or technical restrictions.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <figure>
+          <img src="https://svgshare.com/i/19WM.svg" alt="Data 2" />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Vendor-to-customer</h5>
+          <p>
+            Vendors train machine learning models on customer-owned data. Traditionally, this required customer consent and data centralization. Federated Learning (FL) offers a more privacy-friendly approach, allowing vendors to develop
+            intelligent tools and services without directly accessing sensitive information. This is particularly useful when customers are reluctant to share data, enabling smarter services while maintaining data privacy.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <figure>
+          <img src="https://svgshare.com/i/19W5.svg" alt="Data 3" />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Industry collaborations</h5>
+          <p>
+            An interesting application of federated learning is industry-wide collaboration. Here, multiple companies, even competitors, work together to solve shared problems. Federated learning allows them to create joint models without
+            sharing sensitive data. This approach is valuable when competitors need to work together on common challenges or when they want to develop a powerful model together to gain a competitive advantage.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="challenges">
+  <h2>Challenges and considerations</h2>
+  <p>
+    Federated learning introduces a unique set of challenges that must be carefully managed to ensure the effectiveness and security of the learning process across distributed environments.
+  </p>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Complexity and coordination</h5>
+          <p>
+            Federated learning introduces added complexity compared to traditional machine learning. It involves training models across multiple devices or servers, each with its own data. This requires careful coordination of machine
+            learning operations (MLOps) to ensure efficient distribution and aggregation of model updates, reliable communication between nodes, and robust security throughout the process.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Heterogeneity of systems and data</h5>
+          <p>
+            In FL, client devices can vary significantly in terms of hardware capabilities, software environments, and data quality. Additionally, the data on these devices is often non-IID (not independent and identically distributed),
+            meaning it may not represent the overall population. This requires careful algorithm design, thoughtful aggregation of updates, and strategies to manage the variability in both systems and data.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+  <div class="grid">
+    <div>
+      <article>
+        <hgroup>
+          <h5>Scalability</h5>
+          <p>
+            Scalability Federated learning systems must scale efficiently as the number of participating devices increases. Managing thousands or millions of devices simultaneously introduces challenges in coordinating updates, aggregating
+            models, and handling device failures or dropouts.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+    <div>
+      <article>
+        <hgroup>
+          <h5>Privacy and data leakage</h5>
+          <p>
+            Although federated learning enhances privacy by keeping data on client devices, there is still a risk of data leakage through model updates. Adversaries could attempt to infer private information from the gradients or updates
+            shared during the training process. Safeguarding against such risks is crucial.
+          </p>
+        </hgroup>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="our-approach">
+  <p>
+    <i>Learn more about our approach to scalable and secure federated learning <a href="framework.html">here »</a>. </i>
+  </p>
+</section>
+
+      
+    </main>
+    <footer class="container">
+      <nav>
+        <ul>
+          <li><small>Scaleout</small></li>
+          <li><a href="https://github.com/scaleoutsystems"> <img src="https://teal-hawk.static.domains/github_icon.svg" alt="Github icon" width="18" height="18"> </a></li>
+          <li><a href="https://www.linkedin.com/company/scaleout-systems"> <img src="https://teal-hawk.static.domains/linkedin_icon.svg" alt="Linkedin icon" width="18" height="18"> </a></li>
+          <li><a href="https://discord.gg/KMg4VwszAd"> <img src="https://teal-hawk.static.domains/discord_icon.svg" alt="Discord icon" width="18" height="18"> </a></li>
+        </ul>
+        <ul>
+          <li>
+            <small>
+            <a href="framework.html" class="contrast">Framework</a>&nbsp;&ensp;
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp;&ensp;
+            <a href="projects.html" class="contrast">Projects</a>&nbsp;&ensp;
+            <a href="about.html" class="contrast">About</a>&nbsp;&ensp;
+            <a href="pricing.html" class="contrast">Pricing</a>&nbsp;&ensp;
+            <a href="https://docs.google.com/document/d/e/2PACX-1vRGLZ1WTw_STnM2fQFTVDmnjocuv7DBx7snegu10-I0pRrL7MXwJWLxIHegxLLt7zw8c8Gc0ISgWYmm/pub" target="_blank" class="contrast">Terms</a>
+            </small>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>
