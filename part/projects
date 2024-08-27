@@ -1,0 +1,184 @@
+<section id="top">
+  <hgroup>
+    <h1>Uses cases</h1>
+    <p>
+      From enhanced machine learning in cybersecurity and defence to risk mitigation and intelligent intrusion detection in vehicles.
+    </p>
+  </hgroup>
+</section>
+
+<section id="securing_ai">
+  <article>
+    <hgroup>
+      <h2>Securing AI</h2>
+      <p>
+        Integrating federated learning with additional security techniques, can significantly enhance the protection of AI applications, ensuring data privacy, regulatory compliance, and robust defence against threats.
+      </p>
+    </hgroup>
+    <hr />
+    <div class="grid">
+      <div>
+        <figure>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczM7YlQyLXW7SzgbC242o1eBfd-RO7vdMP_fWhplhOhCUG0HSKeNe95JtEdJvBT7JmOFMmcs19UGdfA0JrSgyIOIkF5aIqQatg7p796aPBFelysK6v3Q4stU9jPxJjmePmKwiQN__2jqJyvJKDm-0Uux=w1600-h1067-s-no-gm?authuser=0"
+            alt="Risk evaluation"
+          />
+        </figure>
+      </div>
+      <div>
+        <strong>LeakPro</strong>
+        <br />
+        The LeakPro project aims to build an open-source platform designed to evaluate the risk of information leakage in machine learning applications. It assesses leakage in trained models, federated learning, and synthetic data, enabling
+        users to test under realistic adversary settings. <br />
+        <br />
+        Built in collaboration AstraZeneca, AI Sweden, RISE, Syndata, Sahlgrenska University Hospital, and Region Halland.<br />
+        <br />
+        <button class="contrast" onclick="window.open('https://www.ai.se/en/project/leakpro-leakage-profiling-and-risk-oversight-machine-learning-models', '_blank')">
+          Learn more
+        </button>
+      </div>
+    </div>
+    <br />
+    <div class="grid">
+      <div>
+        <figure>
+          <img src="https://svgshare.com/i/19RU.svg" alt="Partner logos" />
+        </figure>
+      </div>
+      <div>
+        <figure>
+          <img src="https://svgshare.com/i/19Pz.svg" alt="Partner logos" />
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <hgroup>
+      <h3>Related projects</h3>
+      <p>A selection of our current public cybersecurity projects</p>
+    </hgroup>
+    <div class="grid">
+      <div>
+        <figure>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczOomMZcaUh7YL1d2fg-tQq_702nLAzyuEA92ZQu02ibBB2PksirkUL8cuuPAuZkH_7OAt3fI6xLg5RCN84APy6NvX240UzhbEkSA6aV7aJtNL3yfuCUtItXCr6aHYWpU6HtysndeFleA0wWmDd8BQOn=w800-h400-s-no-gm?authuser=0"
+            alt="IoT IDS"
+          />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>IoT IDS</h5>
+          <p>
+            <small> An advanced Intrusion Detection System (IDS) for IoT using federated learning, enhancing security and privacy by leveraging decentralised data analysis without compromising data privacy.</small><br />
+            <a href="https://www.scaleoutsystems.com/post/enhancing-iot-security-with-federated-learning" class="secondary" target="_blank"><small>Learn more »</small></a>
+          </p>
+        </hgroup>
+      </div>
+      <div>
+        <figure>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczMZLLZFGxZbc15OL1yQhL8pLRKybTO17zSXLwR5eIFuQN0pW6i4-Sqq4e5hURTerMFwE3Kr2y5oCt_21xKhHL_qEq9DlnyAM7ZNx177konV5g6VnUaMH3GE7-xmT3PYSJgjgYySfl8iTYcH-ya3mpKU=w800-h400-s-no-gm?authuser=0"
+            alt="AI Honeypots"
+          />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>AI Honeypots</h5>
+          <p>
+            <small> A new approach to AI security by integrating honeypots into federated learning networks to identify unknown threats and use the collected data to create resilient AI solutions. </small><br />
+            <a href="https://www.vinnova.se/en/p/enhancing-ai-security-with-federated-learning-and-advanced-honeypots/" class="secondary" target="_blank"><small>Learn more »</small></a>
+          </p>
+        </hgroup>
+      </div>
+      <div>
+        <figure>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczOE4wK9ImKHUF2wol8OsfukngBP6T4PHQ2tySf19bS-9vxLVymZ2AkqJHg681-_Qew1-n24zBbSHICHTGDOhJFrHpSm6MPOrZohU7bsLgkz5JLaJbj89ePOMh4WReFvUGMX3JuPE-dgyaRrdb87hvJT=w800-h400-s-no-gm?authuser=0"
+            alt="Interstice"
+          />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Interstice</h5>
+          <p>
+            <small> Intelligent security solutions for connected vehicles, focusing on on-vehicle intrusion detection to evaluate risks and identify realistic attack vectors. With Scania CV as the principal coordinator. </small><br />
+            <a href="https://www.vinnova.se/p/interstice---intelligent-security-solutions-for-connected-vehicles/" class="secondary" target="_blank"><small>Learn more »</small></a>
+          </p>
+        </hgroup>
+      </div>
+      <div>
+        <figure>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczPQPxWLRTfyp9mqFwfz0w8eK9KJrkFp2PnEspqotaNWEGZ8EdzYtQoRh4eNQktu3s4j72MDfC6SZxWPliF88yi0iL3m_R5--FUQku1npKIXYE9nW0R8YZbZM_QkZTpmZumTru4CLHpeyw-FFbABW6Gu=w800-h400-s-no-gm?authuser=0"
+            alt="Secure Enclaves"
+          />
+        </figure>
+        <br />
+        <hgroup>
+          <h5>Secure Enclaves (TEE)</h5>
+          <p>
+            <small> A solution for mitigating the challenge of protecting and ensuring trusted execution of machine learning on local clients using secure enclaves. </small><br />
+            <br />
+            <a href="https://www.vinnova.se/en/p/trusted-execution-environments-for-federated-learning/" class="secondary"><small>Learn more »</small></a>
+          </p>
+        </hgroup>
+      </div>
+    </div>
+    <hr />
+    <hgroup>
+      <h3>Partners</h3>
+      <p>
+        Our AI security projects bring together a network of trusted partners and leading experts in machine learning, and cybersecurity.
+      </p>
+    </hgroup>
+    <figure>
+      <img src="https://svgshare.com/i/19Ro.svg" alt="partners" />
+    </figure>
+  </article>
+</section><br />
+
+<section id="medical_ai">
+  <article>
+    <hgroup>
+      <h2>Medical AI</h2>
+      <p>
+        AI has great potential in medicine for tasks like pathology, organ segmentation, and anomaly detection. However, it relies on doctors manually creating annotated data, which is essential for training effective machine learning
+        models.
+      </p>
+    </hgroup>
+    <hr />
+    <div class="grid">
+      <div>
+        <figure>
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczOm-x8K-b5zsxUpdqPUSRtGmxQHo7qroI7zRSI3u0iSJpwhsaFv1n6HGEZErxrXuelicK--d7qtlf-gj1314wtEI97jVoT_N6_DasUhjHOl_DXvIOjZoLP88c0x1LqIyCmO12RV-FUieDWg8hMTO90k=w1600-h1067-s-no-gm?authuser=0"
+            alt="Medical AI"
+          />
+        </figure>
+      </div>
+      <div>
+        <strong>Itea Assist</strong>
+        <br />
+        The challenge in medical AI is that sensitive health data, owned by customers and regulated, cannot be shared or moved off-site, limiting its use in improving AI.
+        <br />
+        <br />
+        Single clinics often lack diverse, large datasets, and anonymizing data is costly and reduces utility. Federated learning addresses this by allowing multiple clinics to contribute to AI model improvements without moving or sharing
+        their data.
+        <br />
+        <br />
+        <button class="contrast" onclick="window.open('https://itea4.org/project/assist.html', '_blank')">
+          Learn more
+        </button>
+      </div>
+    </div>
+    <hr />
+    <hgroup>
+      <h3>Partners</h3>
+      <p>
+        The Iteas Assist project brings together a group of expert partners in the fields of machine learning, therapy and medical imaging.
+      </p>
+    </hgroup>
+    <figure>
+      <img src="https://svgshare.com/i/19S4.svg" alt="partner logos" />
+    </figure>
+  </article>
+</section>
