@@ -1,0 +1,50 @@
+<section id="workshop">
+  <hgroup>
+    <h1>Workshop</h1>
+    <p>An online workshop for data scientists and ML engineers focusing on federated machine learning with a step-by-step demonstration.</p>
+  </hgroup>
+  <br />
+
+  <div class="grid">
+    <div>
+      <section id="team">
+        <h2>Information</h2>
+        <p>
+          In this workshop, we will guide you through the workflow of establishing a cross-silo ML federation within an organization. <br />
+          <br />
+          Additionally, we will provide an in-depth exploration of the capabilities of FEDn Studio and demonstrate how it seamlessly integrates with MLOps workflows.
+        </p>
+        <b>Agenda (Approximately 90 minutes):</b>
+        <ul>
+          <li>Introductions and framework overview (15 min)</li>
+          <li>Demonstration of a practical use case (50 min)</li>
+          <li>Questions and answers (15 min)</li>
+        </ul>
+        <p>
+          Please indicate in the registration form if you wish to participate as a federated client in the practical segment of the workshop. <br />
+          <br />
+          Familiarity with basic terminal commands, as well as a local environment with Docker and Git, is required.
+        </p>
+        <br />
+      </section>
+    </div>
+
+    <div>
+      <form static-form>
+        <h2>Date & time (CEST)</h2>
+        <fieldset>
+          <ul>
+            <li>August 28, 9:00</li>
+            <li>September 5, 17:00</li>
+          </ul>
+          <p>(Please indicate your preferred date in the message below.)</p>
+          <h2>Registration</h2>
+          <input name="name" placeholder="Name" autocomplete="given-name" />
+          <input type="email" name="email" placeholder="Email" autocomplete="email" aria-label="Email" />
+          <textarea name="message" placeholder="Message" aria-label="Message"></textarea>
+        </fieldset>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </div>
+</section>
