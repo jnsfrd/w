@@ -1,0 +1,65 @@
+<section id="pricing">
+  <hgroup>
+    <h1>Pricing</h1>
+    <p>
+      Pricing, support-levels and hosting options to support the full range from personal testing to proof-of-concepts to integration in production environments.
+    </p>
+  </hgroup>
+
+  <div class="grid">
+    <div>
+      <article>
+        <header><strong>Free</strong> (€0)</header>
+        <p>
+          Offers the full FEDn feature set. Sever-side resources suitable for exploration, personal development and small-scale projects.
+        </p>
+        <button class="contrast" onclick="location.href='https://fedn.readthedocs.io/en/stable/quickstart.html', '_blank'">
+          Get started
+        </button>
+        <footer>
+          <small>Free for personal use / small projects. One project in cloud-hosted FEDn Studio. Community support.</small>
+        </footer>
+      </article>
+    </div>
+    <div>
+      <article>
+        <header><strong>Discovery</strong> (€800)</header>
+        <p>
+          Designed for professional teams doing proof-of-concept work using cloud-hosted FEDn Studio. Additional server-side resources to support R&D workloads and large-scale experimentation, dedicated support.
+        </p>
+        <button onclick="location.href='https://fedn.scaleoutsystems.com/signup/', '_blank'">
+          Sign up
+        </button>
+        <footer>
+          <small>Up to 5 projects. Up to 10 seats. Unlimited client connections. Dedicated Discord, Slack or email support.</small>
+        </footer>
+      </article>
+    </div>
+    <div>
+      <article>
+        <header><strong>Enterprise</strong> (Quote)</header>
+        <p>
+          For organizations on a path to production. Private-hosting options for the server-side, ML engineering services and tailored, dedicated support.
+        </p>
+        <button onclick="location.href='mailto:contact@scaleoutsystems.com', '_blank'" class="outline secondary">
+          Contact us
+        </button>
+        <footer>
+          <small>Everything from Discover, plus: Private-hosting options, ML engineering services and tailored support.</small>
+        </footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<article>
+  <hgroup>
+    <h5>
+      Free forever for academic research
+    </h5>
+    <p>
+      FEDn originated from academic research and we take an active part in the academic community. This is why FEDn is free forever for academic research and personal use.
+      <a href="mailto:contact@scaleoutsystems.com">Apply now »</a>
+    </p>
+  </hgroup>
+</article>
