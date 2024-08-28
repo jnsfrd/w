@@ -1,3 +1,4 @@
+<main class="container">
 <section id="intro">
   <br />
   <hgroup>
@@ -264,3 +265,4 @@
     <i>Learn more about our approach to scalable and secure federated learning <a href="framework.html">here »</a>. </i>
   </p>
 </section>
+</main>
