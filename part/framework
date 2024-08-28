@@ -1,3 +1,4 @@
+<main class="container">
 <section id="top">
   <hgroup>
     <h1>The FEDn framework</h1>
@@ -218,3 +219,4 @@
     </p>
   </details>
 </section>
+</main>
