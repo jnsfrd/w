@@ -1,3 +1,4 @@
+<main class="container">
 <section id="hero">
   <hgroup>
     <h1>About Scaleout</h1>
@@ -204,3 +205,4 @@
   </p>
   <br />
 </section>
+</main>
