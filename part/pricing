@@ -1,3 +1,4 @@
+<main class="container">
 <section id="pricing">
   <hgroup>
     <h1>Pricing</h1>
@@ -63,3 +64,4 @@
     </p>
   </hgroup>
 </article>
+</main>
