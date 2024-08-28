@@ -1,3 +1,4 @@
+<main class="container">
 <section id="hero">
   <hgroup>
     <h1 id="main_title">
@@ -256,3 +257,4 @@
     </div>
   </div>
 </section>
+</main>
