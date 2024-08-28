@@ -1,3 +1,4 @@
+<main class="container">
 <section id="top">
   <hgroup>
     <h1>Projects</h1>
@@ -182,3 +183,4 @@
     </figure>
   </article>
 </section>
+</main>
