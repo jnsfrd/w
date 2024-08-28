@@ -17,7 +17,7 @@
     <meta property="og:url" content="https://www.scaleoutsystems.com/" />
     <title>Scaleout - From R&D to real-world federated learning</title>
     <meta name="description" content="The FEDn framework enables development and deployment of federated learning applications, from proofs-of-concept to distributed real-world settings.">
-    <head>
+    </head>
   <body>
     <header class="container">
       <nav>
