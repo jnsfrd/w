@@ -3,9 +3,11 @@
 <template component="site-nav">
   <nav>
     <ul>
-      <li><a href="/">Home</a>
+      <li>
+<a href="/">Home</a>
  <a href="/about">About</a>
- <a href="/contact">Contact</a></li>
+ <a href="/contact">Contact</a>
+</li>
     </ul>
   </nav>
 </template>
