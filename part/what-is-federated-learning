@@ -194,7 +194,7 @@
             <article>
               <hgroup>
                 <h5>Scalability</h5>
-                <p> Scalability Federated learning systems must scale efficiently as the number of participating devices increases. Managing thousands or millions of devices simultaneously introduces challenges in coordinating updates, aggregating models, and handling device failures or dropouts. </p>
+                <p> Federated learning systems must scale efficiently as the number of participating devices increases. Managing thousands or millions of devices simultaneously introduces challenges in coordinating updates, aggregating models, and handling device failures or dropouts. </p>
               </hgroup>
             </article>
           </div>
