@@ -1,6 +1,7 @@
 <!-- only for testing -->
 <!-- nav.html -->
 <template component="site-nav">
+<nav>
         <ul>
           <li>
             <a href="framework.html" class="contrast">Framework</a>&nbsp;&ensp;
