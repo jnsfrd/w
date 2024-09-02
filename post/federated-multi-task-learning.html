@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style id="__livecodes_styles__"></style></head><body><!DOCTYPE html>
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style id="__livecodes_styles__"></style></head><body>
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+    <link rel="icon" type="image/x-icon" href="/w/favicon.ico">
+    
+<title>Federated Multi-task Learning</title>
+
+  
+
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <figure>
+              <a href="/w/index.html" title="Return to homepage">
+                <!-- Your logo or SVG here -->
+              </a>
+            </figure>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+<main class="container" style="max-width: 850px;">
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+   <article id="article">
+     <h1>Federated Multi-task Learning</h1>
+     <h2>Federated Learning (FL)</h2>
+<p>In federated learning, multiple clients collaboratively train a machine learning model without sharing their local data. Instead of sending raw data to a centralized server, clients train a model on their local data and only send model parameters to a central server. Federated learning enhances privacy, as raw data never leaves the clients. </p>
+<p>If you are new to federated learning and need a comprehensive introduction, I recommend that you register for our workshop at <a href="https://www.google.com/url?q=https://www.scaleoutsystems.com/workshop&amp;sa=D&amp;source=editors&amp;ust=1725317176342166&amp;usg=AOvVaw2gdaRmaeZWBtICYCqugXPL">https://www.scaleoutsystems.com/workshop</a>. Also have a look at <a href="https://www.google.com/url?q=https://www.scaleoutsystems.com/framework&amp;sa=D&amp;source=editors&amp;ust=1725317176342660&amp;usg=AOvVaw30fQ77sncpvr03q0PHOGGu">https://www.scaleoutsystems.com/framework</a>, where you can learn about our federated learning framework FEDn.</p>
+<p>While federated learning has many benefits over centralized machine learning, it comes with its own challenges:</p>
+<ul><li class="c16 li-bullet-0">Data Heterogeneity: Each client collects data in a non-iid manner, with data being generated from a distinct probability distribution. Further, the number of data points generated at each client may differ.</li><li class="c16 li-bullet-0">System Heterogeneity: The computational power, storage, as well as communication capabilities may differ across the edge devices due to variability in hardware. </li></ul>
+<p>In this blog post, I will introduce multi-task learning, an approach to machine learning that can overcome the challenges of data heterogeneity and system heterogeneity in the federated setting. This makes it interesting to combine multi-task learning with federated learning [1]. </p>
+<h2>Multi-task Learning (MTL)</h2>
+<p>In machine learning, we usually train a single model on a dataset to perform a specific task. This is the case whether it is in the domain of computer vision, natural language processing, or some other application area. While this approach has turned out to be very successful, this “single-task learning” approach disregards information that may be useful and that could improve our metric of interest.</p>
+<p>In multi-task learning, multiple related tasks are learned concurrently by a shared model. This improves model generalization, which leads to a better performance on the original task [2]. </p>
+<h2>Hard parameter sharing</h2>
+<p>Hard parameter sharing is the most popular method in MTL. Model weights are shared between all tasks -only output layers are task-specific with the goal of jointly minimizing multiple loss functions. Hard parameter sharing can be seen as regularization, since a representation has to be learned that performs well across all tasks, thereby reducing overfitting on one specific task [2]. The figure below illustrates hard parameter sharing. </p>
+<p>‍</p>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXftoODfFPdzSAFcSInuCbBOARY1BJrUtSnQ0xlFzKcfUB6nNg1nrJtREBftNM2lYy43jiW5u48RDsPCO9V6gB3WrLTpmqmLXpPeI7xkzhNOOu5VIhLJA0FnOXm-XrXeViw4lJi-OgU6OTPyJSoy4Q?key=gtXQqTC1s1vnF1SuilCDvQ"/></p>
+<p>‍</p>
+<h2>Soft parameter sharing</h2>
+<p>On the other hand, soft parameter sharing trains separate models for each specific task. Rather than sharing the exact same parameters between the task-specific models, soft parameter sharing encourages the parameters between the models to be similar by penalizing divergence between parameters [2]. Soft parameter sharing is illustrated in the figure below. </p>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXcUv-UAEEOQJbix3OQ51hqLD8WBv_ZcayrjnWWb7jBHAUd4Ex4rxbeAwT4loHTN7Gf9KvP6ast_dAp0joGuG5nQOEQ724lJiyAGhb7askjVsMhIVFs0mdvSO7NnkNk-iRFP-OrqKNEiVFE2EYRSpw?key=gtXQqTC1s1vnF1SuilCDvQ"/></p>
+<p>‍</p>
+<h2>Federated Multi-Task Learning (FMTL)</h2>
+<p>Let me motivate federated MTL with an example. Imagine two hospitals - both having their own dataset that they are not allowed to share due to privacy regulations. Both datasets consist of chest X-rays, but hospital 1 wants to detect different types of lung diseases, whereas hospital 2 wants to detect heart diseases. While the tasks are different, they are related to each other and the hospitals can benefit from knowledge sharing as it can improve the overall performance of the models. Federated multi-task learning is highly suitable for this use-case.</p>
+<p>The figure below visualizes federated multi-task learning for a more general scenario with hard parameter sharing. As in standard federated learning, a server performs model aggregation and sends the global model to the different clients. Now, the clients perform their task-specific training locally and only send the model parameters that are shared between the clients to the server, which aggregates the model parameters to a new global model. The task-specific parameters are not sent to the server. </p>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeR7vnS7shOnFc-7-iZzVupveHRUog7fr5SNd8zT6O7B2TuoKhkVMXdE5KsAJYnJRAYau10HXFpNKjlqyZfBRQRVMbSzVrgEXwWrAXw7XTDBqIYojYmeCxSfSzSetW9A81CSLojcFWkBGkZqQMy?key=gtXQqTC1s1vnF1SuilCDvQ"/></p>
+<p>‍</p>
+<p>Another way to motivate MTL in the federated learning setting is that it naturally deals with data and system heterogeneity. In classical federated learning, a single global model is learned to fit the data across all clients. As each client may generate data from a distinct data distribution, model performance can vary across clients. With MTL however, it is possible to learn separate models for each client, thereby taking the heterogeneity into account. MTL deals with system heterogeneity, as clients can train models that fit their computational capabilities. As only shared parameters are aggregated on the server side, each client can contribute to the global model despite different computational capabilities. Additionally, MTL deals with data heterogeneity, as clients can train task-specific models on their own data distribution. By adding a regularization term, it is possible to enforce the local models to be similar to the global model, which encourages the local models to take global information into account. Li et al. [3] propose an L2 regularizer which forces the local models wk to be similar to the global model w*: </p>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfqbzzRs4FCH7nmUOqdqu5gc7meCCIsG3kWjUvVmHGq4WAHSPGQodZoAvhQyaAVnxvM39TREKD8PL58jLFHH0qWDfQ5ED8o70QVhBYZMbxWj5-q2v5btGCZ97s3FA-vTFnQsUKMXPvViYloYSCs8A?key=gtXQqTC1s1vnF1SuilCDvQ"/></p>
+<p>  where λ is a hyperparameter and Fk(wk) is local loss for client k.</p>
+<p>Note that the parameter λ controls the level of personalization of the local models: If λ is large, local models are forced to be similar to the global model, meaning that local models are similar to each other. If λ is small, the opposite is the case and local models will be more personalized. </p>
+<p>Hard and soft parameter sharing in MTL is closely related to the described setting. Federated MTL with hard parameter sharing enforces the shared layers between the clients to be identical. Federated MTL with soft parameter sharing however allows for more personalization, as parameters between the local models are allowed to differ. </p>
+<h2>Summary</h2>
+<p>This blog post introduced multi-task learning as a method that improves model generalization by training a shared model across multiple related tasks. Using multi-task learning in a federated setting is a natural way to deal with data and system heterogeneity, and allows for personalization of local models. </p>
+<h3>References </h3>
+<p>[1] Smith, Virginia, Chiang, Chao-Kai, Sanjabi, Maziar, and Talwalkar, Ameet. "Federated Multi-Task Learning". In: CoRR abs/1705.10467 (2017). <a href="https://www.google.com/url?q=http://arxiv.org/abs/1705.10467&amp;sa=D&amp;source=editors&amp;ust=1725317176348299&amp;usg=AOvVaw0kDIp_a-jVvDsVXTQhrfMn">http://arxiv.org/abs/1705.10467</a>.</p>
+<p>[2] Ruder, Sebastian. "An Overview of Multi-Task Learning in Deep Neural Networks". In: CoRR abs/1706.05098 (2017).<a href="https://www.google.com/url?q=http://arxiv.org/abs/1706.05098&amp;sa=D&amp;source=editors&amp;ust=1725317176348864&amp;usg=AOvVaw0sXP3DlocPiqAWLikbM2LL"> http://arxiv.org/abs/1706.05098</a>.</p>
+<p>[3] Li, Tian, Hu, Shengyuan, Beirami, Ahmad, and Smith, Virginia. "Federated Multi-Task Learning for Competing Constraints". In: Neural Information Processing Systems (NeurIPS 2020). (2020).</p>
+<p></p>
+   </article>
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+ </main>
+
+    <footer class="container">
+      <nav>
+        <ul>
+          <li>
+            Scaleout&nbsp; 
+            <a href="https://github.com/scaleoutsystems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/github/B7B8BB?viewbox=auto" alt="GitHub icon"> </a> 
+            <a href="https://www.linkedin.com/company/scaleout-systems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/linkedin/B7B8BB?viewbox=auto" alt="LinkedIn icon"> </a> 
+            <a href="https://discord.gg/KMg4VwszAd"> <img width="18" height="auto" src="https://cdn.simpleicons.org/discord/B7B8BB?viewbox=auto" alt="Discord icon"> </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <small>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/articles.html" class="contrast">Articles</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+            <a href="/w/pricing.html" class="contrast">Pricing</a>&nbsp; 
+            <a href="/w/terms.html" class="contrast">Terms</a>
+            </small>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+<script></script></body></html>
