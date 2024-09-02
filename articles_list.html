@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style id="__livecodes_styles__"></style></head><body>{% extends "base.html" %}
+
+{% block head %}
+<title>Articles Index</title>
+{% endblock %}
+
+{% block main %}
+<main class="container">
+    <hgroup>
+        <h1>Articles</h1>
+        <p>Explore expert insights, practical guides, and in-depth articles.</p>
+    </hgroup>
+    <article>
+        <h4>Featured</h4>
+        <div class="grid">
+            <div>
+                <figure>
+                    <img src="{{ featured_info.img_src }}" alt="{{ featured_info.title }}">
+                </figure>
+            </div>
+            <div>
+                <h5>{{ featured_info.title }}</h5>
+                <p>{{ featured_info.first_50_words }}</p>
+                <button class="secondary outline" onclick="location.href='post/{{ featured_info.link }}'">Learn more</button>
+            </div>
+        </div>
+    </article>
+    <section id="articles">
+        <div class="grid">
+            {% for article, placeholder_url in articles_with_urls %}
+            <div>
+                <article>
+                    <img src="{{ placeholder_url }}" alt="{{ article.title }}" style="width:100%; height:auto;">
+                    <footer>
+                        <a href="post/{{ article.filename }}" class="secondary">Read »</a>
+                    </footer>
+                </article>
+            </div>
+            {% if loop.index % 3 == 0 %}
+        </div>
+        <div class="grid">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}<script></script></body></html>
