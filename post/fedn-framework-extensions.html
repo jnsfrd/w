@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style id="__livecodes_styles__"></style></head><body><!DOCTYPE html>
+<html lang="en" class=""><head><script>window.livecodes = window.livecodes || {};</script><title>Untitled Project</title><meta name="title" content="Untitled Project"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><style id="__livecodes_styles__"></style></head><body>
+
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+    <link rel="icon" type="image/x-icon" href="/w/favicon.ico">
+    
+<title>FEDn Framework Extensions</title>
+
+  
+
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <figure>
+              <a href="/w/index.html" title="Return to homepage">
+                <!-- Your logo or SVG here -->
+              </a>
+            </figure>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+<main class="container" style="max-width: 850px;">
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+   <article id="article">
+     <h1>FEDn Framework Extensions</h1>
+     <p>January 30, 2024</p>
+<p></p>
+<p>In Federated Learning, model updates computed by clients on private, local data are combined by a server into a global model. Since the computation is inherently distributed, there is a need to move the model updates to the server. The format of the model is dictated by the specific ML framework used, e.g. PyTorch. Moving an object (in this case a model update) from its memory representation at the client to its memory representation at the server is a process that is referred to as marshaling. </p>
+<p></p>
+<p>Once model updates from multiple clients are available on the server, they need to be aggregated. In federated learning, there are many possible aggregations schemes. The most commonly used is called Federated Averaging (FedAvg), where a weighted average of the model parameters is computed. More advanced alternatives include Federated Adam (FedAdam), where a pseudo-gradient is computed and the global model is updated using so-called server side momentum. Many different variants of global aggregation schemes can be derived by combining a given local optimization strategy (at clients) with a server side strategy. A good introduction to this topic is provided in the paper <a href="https://www.google.com/url?q=https://arxiv.org/abs/2003.00295&amp;sa=D&amp;source=editors&amp;ust=1725319140245526&amp;usg=AOvVaw34Dw1QDu9kUhsxoKPpmC_D">https://arxiv.org/abs/2003.00295</a> by Reddi et al. </p>
+<p></p>
+<p>It is relatively straightforward to write a simulation code for federated learning, however for a production grade system, care should be taken to make sure that both marshaling, model transfers (for example via streaming) and aggregation is scalable, robust and secure. At the same time, there is a need to allow data scientists a user-friendly way to extend the framework with custom aggregators and support for new ML frameworks. In FEDn we enable this with a plugin architecture with clearly defined framework extension points. </p>
+<p></p>
+<p>In what follows, we elaborate on the computational model for aggregation, and the steps taken by a developer to extend and configure the framework.</p>
+<h2>Aggregators </h2>
+<p>Aggregators handle combinations of model updates received by the combiner into a combiner-level global model. During a training session, the combiners will instantiate an Aggregator and use it to process the incoming model updates from clients.</p>
+<p><img alt="" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXe_iBBSRtUxJL3kSrqsAGAyilKdBERSFvIwXMHgLXxadRgH25rr5AWMYY-R5QzstqyQYqrElJwE9uwugsjmwutQDW8aZ0se9Sx49Qy1IIIiMZ6hbNB7TmzVeSnvZm1okY9FMgjedLulxwlv2Bn2vw?key=tqMEhmp_-yopIWj_BlEu8A"/></p>
+<p>The above figure illustrates the overall flow. When a client completes a model update, the model parameters are streamed to the combiner, and a model update message is sent. The model parameters are written to file on disk, and the model update message is passed to a callback function, on_model_update. The callback function validates the model update, and if successful, puts the update message on an aggregation queue. The model parameters are written to disk at a configurable storage location at the combiner. This is done to avoid exhausting RAM memory at the combiner. As multiple clients send updates, the aggregation queue builds up, and when a certain criteria is met, another method, combine_models, starts processing the queue, aggregating models according to the specifics of the scheme (FedAvg, FedAdam, etc).</p>
+<p></p>
+<p>The user can configure several parameters that guide general behavior of the aggregation flow:</p>
+<ul><li class="c1 c5 li-bullet-0">Round timeout: The maximal time the combiner waits before processing the update queue.</li><li class="c1 c5 li-bullet-0">Buffer size: The maximal allowed length of the queue before processing it.</li><li class="c1 c5 li-bullet-0">Whether to retain or delete model update files after they have been processed (default is to delete them)</li></ul>
+<p>A developer can extend FEDn with his/her own Aggregator(s) by implementing the interface specified in fedn.network.combiners.aggregators.aggregatorbase.AggregatorBase. The developer implements two following methods:  </p>
+<ul><li class="c1 c5 li-bullet-0">on_model_update (optional)</li><li class="c1 c5 li-bullet-0">combine_models</li></ul>
+<h3>on_model_update</h3>
+<p>The on_model_callback has access to the complete model update including the metadata passed on  by the clients (as specified in the training entrypoint, see compute package).  The base class implements a default callback that checks that all metadata assumed by the aggregation algorithms FedAvg and FedAdam is present in the metadata. However, the callback could also be used to implement custom preprocessing and additional checks including strategies to filter out updates that are suspected to be corrupted or malicious.</p>
+<h3>combine_models</h3>
+<p>This method is responsible for processing the model update queue and in doing so produce an aggregated model. This is the main extension point where the numerical detail of the aggregation scheme is implemented. The best way to understand how to implement this methods is to study the already implemented algorithms:</p>
+<ul><li class="c1 c5 li-bullet-0">fedn.network.combiners.aggregators.fedavg</li><li class="c1 c5 li-bullet-0">fedn.network.combiners.aggregators.fedopt</li></ul>
+<p>To add an aggregator plugin “myaggregator”, the developer implements the interface and places a file called ‘myaggregator.py’ in the folder ‘fedn.network.combiner.aggregators’.</p>
+<h2>Model marshaling - Helpers</h2>
+<p>In federated learning, model updates need to be serialized and deserialized in order to be transferred between clients and server / combiner. There is also a need to write and load models to/from disk, for example to transiently store updates during training rounds. Furthermore, aggregation algorithms need to perform a range of numerical operations on the model updates (addition, multiplication, etc). Since different ML frameworks (TF, Torch, etc) have different internal ways to represent model parameters, there is a need to inform the framework how to handle models of a given type. In FEDn, this compatibility layer is the task of Helpers.</p>
+<p></p>
+<p>A helper is defined by the interface in fedn.utils.helpers.HelperBase. By implementing a helper plugin, a developer can extend the framework with support for new ML frameworks and numerical operations.  </p>
+<p>FEDn ships with a default helper implementation, numpyhelper. This helper relies on the assumption that the model update is made up of parameters represented by a list of numpy.ndarray arrays. Since most ML frameworks have good numpy support it should in most cases be sufficient to use this helper. Both TF/Keras and PyTorch models can be readily serialized in this way. To add a helper plugin “myhelper” you implement the interface and place a file called ‘myhelper.py’ in the folder fedn.utils.helpers.plugins. See the Keras and PyTorch quickstart examples and fedn.utils.helpers.plugins.numpyhelper for further details.</p>
+<p></p>
+   </article>
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+ </main>
+
+    <footer class="container">
+      <nav>
+        <ul>
+          <li>
+            Scaleout&nbsp; 
+            <a href="https://github.com/scaleoutsystems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/github/B7B8BB?viewbox=auto" alt="GitHub icon"> </a> 
+            <a href="https://www.linkedin.com/company/scaleout-systems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/linkedin/B7B8BB?viewbox=auto" alt="LinkedIn icon"> </a> 
+            <a href="https://discord.gg/KMg4VwszAd"> <img width="18" height="auto" src="https://cdn.simpleicons.org/discord/B7B8BB?viewbox=auto" alt="Discord icon"> </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <small>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/articles.html" class="contrast">Articles</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+            <a href="/w/pricing.html" class="contrast">Pricing</a>&nbsp; 
+            <a href="/w/terms.html" class="contrast">Terms</a>
+            </small>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+
+<script></script></body></html>
