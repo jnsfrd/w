@@ -39,8 +39,15 @@
                     </footer>
                 </article>
             </div>
+            {% else %}
+            <div></div>
             {% endif %}
         {% if loop.index % 3 == 0 or loop.last %}
+            {% if loop.last %}
+                {% for i in range(3 - (loop.index % 3)) %}
+                    <div></div>
+                {% endfor %}
+            {% endif %}
         </div>
         {% endif %}
         {% endfor %}
