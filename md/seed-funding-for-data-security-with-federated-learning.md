@@ -1,7 +1,5 @@
 ﻿# Seed funding for data security with federated learning
 
-> https://www.scaleoutsystems.com/post/seed-funding-for-data-security-with-federated-learning
-
 As artificial intelligence (AI) rapidly evolves, the need for improved data security and personal privacy is more urgent than ever. Scaleout Systems, an innovative AI company, addresses this critical challenge and has successfully completed a significant seed funding round. This financing is intended to accelerate the company's development of its unique technology based on federated machine learning, enabling AI to reach its full potential without compromising user data privacy and integrity.
 
 This key funding, amounting to 1.5 million EUR, has attracted a strong group of investors, including Navigare Ventures owned by Wallenberg Investments AB, SEB:s Utvecklingsstiftelse, Almi Invest and Uppsala University Invest; a combination of actors investing in research-intensive startups with the potential to strengthen Sweden's competitiveness as an export nation in the long term.
