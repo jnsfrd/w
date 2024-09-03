@@ -1,7 +1,5 @@
 ﻿# Our approach to scalable federated learning
 
-> https://www.scaleoutsystems.com/post/our-approach-to-scalable-federated-learning
-
 Scalable federated learning
 ---------------------------
 
