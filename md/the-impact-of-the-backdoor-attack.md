@@ -1,7 +1,5 @@
 ﻿# The impact of the backdoor attack
 
-> https://www.scaleoutsystems.com/post/the-impact-of-the-backdoor-attack
-
 This is the second part of our input privacy series, focusing on the implications of established adversarial attacks on federated learning. It's worth noting that while extensive literature exists regarding adversarial attacks on centralized models, reassessing the attack scenario within federated environments is paramount. As explored in our previous post, the unique dynamics of federated training and the aggregator's role significantly alter the attack's repercussions.
 
 This time we explore backdoor attacks and their effects on the global model. We assess the entire backdoor mechanism, closely examining its structural intricacies and impact. These new insights highlight the severity and implications of backdoor attacks on federated model training.
