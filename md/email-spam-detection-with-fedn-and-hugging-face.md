@@ -1,7 +1,5 @@
 ﻿# Email spam detection with FEDn and Hugging Face
 
-> https://www.scaleoutsystems.com/post/email-spam-detection-with-fedn-and-hugging-face
-
 Our new example project demonstrates how one can make use of the popular Hugging Face ‘Transformers’ library in FEDn. In this example, a pre-trained BERT-tiny model \[1\] from Hugging Face is fine-tuned to perform spam detection on the Enron spam email dataset \[2\]. Check out the example in FEDn at:
 
 [https://github.com/scaleoutsystems/fedn/tree/master/examples/huggingface](https://github.com/scaleoutsystems/fedn/tree/master/examples/huggingface)
