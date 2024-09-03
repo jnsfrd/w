@@ -1,7 +1,5 @@
 ﻿# Enhancing data security with trusted execution environments
 
-> https://www.scaleoutsystems.com/post/enhancing-data-security-with-trusted-execution-environments
-
 TEE Project Summary
 -------------------
 
