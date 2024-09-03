@@ -1,4 +1,4 @@
-﻿# # Announcing Scaleout Studio
+﻿# Announcing Scaleout Studio
 
 > https://www.scaleoutsystems.com/post/announcing-scaleout-studio
 
