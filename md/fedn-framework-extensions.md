@@ -1,7 +1,5 @@
 ﻿# FEDn Framework Extensions
 
-> https://www.scaleoutsystems.com/post/fedn-framework-extensions
-
 In Federated Learning, model updates computed by clients on private, local data are combined by a server into a global model. Since the computation is inherently distributed, there is a need to move the model updates to the server. The format of the model is dictated by the specific ML framework used, e.g. PyTorch. Moving an object (in this case a model update) from its memory representation at the client to its memory representation at the server is a process that is referred to as _marshaling_.
 
 Once model updates from multiple clients are available on the server, they need to be aggregated. In federated learning, there are many possible aggregations schemes. The most commonly used is called Federated Averaging (FedAvg), where a weighted average of the model parameters is computed. More advanced alternatives include Federated Adam (FedAdam), where a pseudo-gradient is computed and the global model is updated using so-called server side momentum. Many different variants of global aggregation schemes can be derived by combining a given local optimization strategy (at clients) with a server side strategy. A good introduction to this topic is provided in the paper [https://arxiv.org/abs/2003.00295](https://arxiv.org/abs/2003.00295) by Reddi et al.
