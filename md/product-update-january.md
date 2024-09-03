@@ -1,7 +1,5 @@
 ﻿# Product update January
 
-> https://www.scaleoutsystems.com/post/product-update-january
-
 The FEDn version 0.7.0 introduces significant enhancements including the integration of Python's logging framework for client-side logging, compatibility improvements for Windows users, and substantial refactoring of the gRPC server for better scalability and efficiency. This update brings a more robust and user-friendly experience to our users, particularly in managing client-server interactions and data handling.
 
 See release details here: https://github.com/scaleoutsystems/fedn/releases/tag/v0.7.0
