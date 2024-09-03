@@ -1,4 +1,4 @@
-﻿# # Understanding the Scaleout software suite
+﻿# Understanding the Scaleout software suite
 
 Federated Learning (FL) is emerging as an integral method for developing and training machine learning models. At Scaleout, we are at the forefront of this evolution, building a comprehensive software suite tailored to federated learning. Our platform consists of two significant components, FEDn and Studio, which together provide a complete solution for your federated learning projects. In this blog post, we take a closer look at the specifics of these components, their interplay, and how they work in unison to offer a robust and efficient platform for federated machine learning.
 
