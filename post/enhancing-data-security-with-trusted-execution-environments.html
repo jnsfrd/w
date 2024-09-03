@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/jnsfrd/w/gh-pages/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="https://lh3.googleusercontent.com/pw/AP1GczNIltUVyg6K5Gv2vOelHIv7ZSiuy1rWdWljy5U4vjeeAIpKgp-3vc-iskHx_YoqFsKNhNYnbNHpBog5y_W6lSMVDHFtkioGV2xEo76qkMUu39UqKSc06EPjxG-yLYKvx2dMymTto72_EE3etkjJDUOH=w192-h192-s-no-gm?authuser=0">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPm5GpNnyZdcIw9kuWZFEdbbVqNMne7IYq8WoSxevmcVdxddjwMAeIZQVkwdApocm5lMQKJmsMHilrfarYUa0Ce_EMNNWn8M8jrurXtnyArwhpFHxq-WYbcAQoLn86rVRkm02qJS94rkDtG_8DkIJlL=w180-h180-s-no-gm?authuser=0" />
+    <!--- Fix robots.txt and sitemap.xml when record are set at DNS --->
+    
+<title></title>
+
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <figure>
+              <a href="/w/index.html" title="Return to homepage">
+                <img src="https://raw.githubusercontent.com/jnsfrd/w/gh-pages/img/scaleout_logo.svg" alt="Logo">
+              </a>
+            </figure>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+<main class="container" style="max-width: 850px;">
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+    <article id="article">
+      <h1>Enhancing data security with trusted execution environments</h1>
+<h2>TEE Project Summary</h2>
+<h2>Introduction</h2>
+<p>The confidential computing consortium defines a Trusted Execution Environment (TEE) as a hardware-based context which provides a certain level of assurance for code and data confidentiality and integrity (<a href="https://confidentialcomputing.io/whitepaper-01-latest">https://confidentialcomputing.io/whitepaper-01-latest</a>). In other words, such an environment provides protection against third parties access and corruption of data as well as protection against code corruption. These properties are somewhat similar to alternative approaches such as homomorphic encryption <a href="https://paperpile.com/c/Jt1i3W/gpPd">(Acar et al., 2019)</a> and secure element <a href="https://paperpile.com/c/Jt1i3W/FQea">(Kanstren et al., 2015)</a>. In homomorphic encryption data is encrypted in a way that makes certain operations possible as if it were in plain format. This should provide data confidentiality and somewhat integrity and programmability, however code integrity and confidentiality is left uncovered. In secure elements, such as Trusted Platform Module, a device is used to securely operate and store keys. Integrity and confidentiality of encryption keys is preserved and integrity of signed code is also ensured. Nevertheless, secure elements primarily focus on protecting keys and lack programmability and generality of TEEs.</p>
+<p>The leading TEE implementations are provided by Intel, AMD and ARM. Intel Software Guard Extension (SGX) <a href="https://paperpile.com/c/Jt1i3W/wL2V">(Schunter, 2016)</a> enables confidentiality and integrity by running the application on a so-called “enclave”. Enclave’s code and data exists solely on processor reserved memory and cannot be accessed by any other peripheral or software. In this way if the host Operative System (OS) or hypervisor gets compromised confidentiality and integrity will still be safeguarded.</p>
+<p><img alt="Image 1" src="https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/664c58c378d2168c952eae42__BO9a6-Z9Uq3CR66jgjrrZFb9IQ0O87rJNlFOpZ4u7WKf2W1ihJodsn8G80NQMKla42QYnqbyaQPO9vj7Qxo4CjDTETOjFA76-upJk2Lo5zhQ7DhN41ItINIP7mLZYaEFKLK9Joy5KQQfr8VsxiarIs.png" /></p>
+<p>Attacks from the OS or from the Hypervisor can only be directed up the stack and cannot reach the enclave.</p>
+<p>AMD implements TEEs with a family of technologies named Secure Encrypted Virtualization (SEV), Encrypted State (ES) and Secure Nested Paging (SNP) <a href="https://paperpile.com/c/Jt1i3W/HNxu">(Li et al., 2022)</a>. The implementation is commonly referred to as AMD SEV. Here the TEE is a Virtual Machine (VM) whose memory and state are encrypted with integrity guarantees. Similarly to SGX, a malicious hypervisor (or OS) should not be able access or alter the state or memory of such a VM. Finally, ARM implements TEEs with a technology referred to as TrustZone <a href="https://paperpile.com/c/Jt1i3W/9g7c">(Koutroumpouchos et al., 2021)</a>. Here, protected code and data reside in a “secure world” that can securely communicate with a “normal world”. This distinction is achieved via hardware-level memory management which aims at ensuring that memory leakage from the secure world will not occur. ARM TrustZone and Intel SGX are somewhat similar. The protected application runs outside of the host OS and hypervisor memory space and therefore the surface of attack is drastically reduced. This however comes at the cost of having to develop applications that cannot make use of any host OS system call. The Gramine project <a href="https://paperpile.com/c/Jt1i3W/VWti">(Tsai et al., 2017)</a>, which at the time of writing this document solely supports Intel SGX, is an open source effort that aims at facilitating running enclaved applications by providing a lightweight LibOS (or unikernel) and a set of tools for facilitating secure loading, provisioning and attestation of enclaves. Since the Gramine LibOS implements most of the Linux system calls one should be able to run unmodified applications on Intel SGX with reduced effort. ARM TrustZone provides a reference document for implementing OS, or “trusted firmwares”, for its trusted world and OP-TEE <a href="https://paperpile.com/c/Jt1i3W/i2Kr"><em>(Yang &amp; Lee, 2020)</em></a> emerged as the open source implementation that collected the largest community. In contrast to the Gramine LibOS, with OP-TEE, and other trusted firmwares, applications need to be recompiled and most likely rewritten in C. Another important difference is that while in Gramine trusted and untrusted environments can run on remote devices, in trusted firmwares the secure and normal world exist on the same device.</p>
+<p>For the means of running FEDn in TEEs, Intel SGX and AMD SEV are the most practical solutions as they allow for running the existing Python-based environment on the TEEs. ARM TrustZone is less suited for cloud applications and targets edge use cases by assuming the secure and unsecure world to reside on the same device. While Internet of Things (IoT) use cases are important for Scaleout, it is important to realize that in most cases we can consider an edge device as a trusted environment as they will most likely reside at a customer facility and not on a cloud provider. With such an assumption, it is then possible to secure the weights with SEV or SGX-enabled reducer and combiner. This however does not allow for edge client attestation. Since Intel and AMD are solely focused on cloud use cases and ARM on edge devices some hybrid solution would be needed for making this happen hence we leave it for future exploration.</p>
+<h2>Use cases</h2>
+<p>In this section we discuss a number of proofs of concept that we implemented.</p>
+<h2>Model serving</h2>
+<p>Serving Machine Learning (ML) models over gRPC or REST APIs has become a common process for many organizations. State of the art practices advocate the deployment of model serving on cloud environments which promise out-of-the-box resilience and scalability for these services. However, every time we move a mission-critical logic outside of an organization we take a risk. Large amount of data and computation is notably needed to train a successful ML model along with a substantial R&amp;D effort, requiring a considerable investment. Therefore, if a third party gets access to served models with the intent of gaining an unfair advantage over our organization, a major loss may occur. ​​In this first proof of concept we use Gramine LibOS to run our serving API in the enclave and rely on remote secret provisioning to load and decrypt the model from the untrusted environment.</p>
+<p><img alt="Image 2" src="https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/664c58c3a91cb7521485dcfc_fJhCkdISqrKpwGp-XZHzxNI3PzoQ2NMw5EH_DKn8Hw1vI0XOi-gGWknSgBVyxwZAZDMJsoiNcuBKEMy0cLcHqCsP76SzLaOrnt6PuzPzy41qhwDNrgMYyXs4pN272t0hD8ff3Wbn1jGxeD4H_rv2Hoo.png" /></p>
+<p>The plain model is encrypted in a trusted environment and shipped to the untrusted premises. An unmodified serving API runs in the enclave making use of Gramine LibOS. Gramine tools manage secret provisioning and decrypting the model when loading it in the enclave.</p>
+<p>Code and documentation for this use case can be found on Scaleout’s GitHub organization: <a href="https://github.com/scaleoutsystems/tee-serve">https://github.com/scaleoutsystems/tee-serve</a>.</p>
+<h2>Confidential compute package</h2>
+<p>FEDn leverages “compute packages” to run code-agnostic training routines on its clients. In a FEDn federation an admin uploads a compute package to a central service, referred to as reducer, which then propagates to clients <a href="https://paperpile.com/c/Jt1i3W/gt7w">(Ekmefjord et al., 2022)</a>. If we consider the client hosts as an untrusted environment one can reach a good level of integrity and confidentiality by running the compute package inside an enclave. In this proof of concept, we mock a use case in which reducer and combiner run on a trusted environment (e.g. on prem resources) and where a client runs on remote untrusted resources. Data can be encrypted like in the previous example for making it inaccessible to the untrusted cloud provider.</p>
+<p><img alt="Image 3" src="https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/664c58c3de3eb31aa70cf0fd_1EWw2dLvpXIWI7jYNv0W8by-H8Qb-LEhejNmM2578jiMMn6Az_6-W5FhPpdKEXPIV1mCrfY52VkFK07MvnKhaKMRQv_HxwktlJhTYPazY2vXYwnC5d8MK1x5cJsneE_8tETQcPdv0Y_P7h56DirYRNk.png" /></p>
+<p>Reducer and combiner run on a trusted environment, i.e. on prem. A client can be deployed on an untrusted environment, i.e. public cloud, to obtain extra resources. The compute package accesses data, which can also be encrypted, inside an enclave.</p>
+<p>Code and documentation for this use case can be found on Scaleout’s GitHub organization: <a href="https://github.com/scaleoutsystems/tee-mnist">https://github.com/scaleoutsystems/tee-mnist</a>.</p>
+<h2>Confidential FEDn deployment</h2>
+<p>A more common use case is to have several organizations connecting their clients to a central FEDn deployment. From the organization's perspective such a deployment, constituted by a reducer and a combiner, may be considered an untrusted environment. By running reducer and combiner in an enclave we can make sure that the hosting provider will not be able to access the weights.</p>
+<p><img alt="Image 4" src="https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/664c58c3174c4c14e9521004_-GAnRTONFPUt7PcOacY50TYcEACe-pqm8nokO-sT2yA15vE52Blz7dT-saLo-q6j9cq1seEnsCoWphe5xABRNmuBAg6SAvYLf-5_KvQydz7aJpQzuLUvgerCWsXdASNIlUVgJ7midm4wLvkhkdVGshA.png" /></p>
+<p>Clients run on a trusted environment, i.e. on prem. Reducer and combiner run on a central untrusted environment, such as public cloud resources. By running reducer and combiner inside an enclave weight updates cannot be seen by the hosting system.</p>
+<p>Code and documentation for this use case can be found on Scaleout’s GitHub organization: <a href="https://github.com/scaleoutsystems/tee-gc">https://github.com/scaleoutsystems/tee-gc</a>. In addition an IoT proof of concept was implemented using a confidential FEDn deployment: <a href="https://github.com/scaleoutsystems/tee-iot">https://github.com/scaleoutsystems/tee-iot</a>.</p>
+<h2>Attestation</h2>
+<p>A crucial feature provided by TEEs is the ability to ensure code integrity. In FEDn’s context, this property can be used not only to ensure the integrity of reducer, combiners and clients but also to ensure the integrity of compute packages. In this proof of concept, we use the Intel attestation service, leveraging Gramine tools, to provision a client token only if the identity and integrity of the enclaved service is verified.</p>
+<p><img alt="Image 5" src="https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/664c58c4dfe8b7808463e022_ng58peRc8tocWNn9Hr6WyfpD9IKSmQytCNaeGRbaWJJgQl3amXMSPT0keT0RWWlgKUAzieSlwKyRDDPVJP_nCgsmFT2ljcCZq_64SLLTeelS4Crm8NkNi1lVA5-ACbOhZibCZQr57iTi99cjBGwPs5g.png" /></p>
+<p>The reducer service runs on a trusted environment and it is responsible for generating client auth tokens. A provisioning service, implemented on top of Gramine toolchain, leverages the Intel attestation service to ensure the integrity of the enclaved client. The token is provisioned only if the integrity of the client is verified.</p>
+<p>Code and documentation for this proof of concept is available on Scaleout’s GitHub: <a href="https://github.com/scaleoutsystems/tee-attestation">https://github.com/scaleoutsystems/tee-attestation</a>.</p>
+<h2>Performance tests</h2>
+<p>We performed some preliminary benchmarking of federated learning in TEEs with FEDn using Azure Confidential Computing (<a href="https://azure.microsoft.com/en-us/solutions/confidential-compute/">https://azure.microsoft.com/en-us/solutions/confidential-compute</a>). The benchmark consists in fitting the MNIST classification dataset <a href="https://paperpile.com/c/Jt1i3W/PBMH">(<em>Supplemental Information 2: MNIST Dataset and Models for MNIST</em>, n.d.)</a> using a deep neural network implemented with the Pytorch C++ API. For details regarding architecture, hyperparameters and training loop please refer to the code: <a href="https://github.com/scaleoutsystems/tee-mnist">https://github.com/scaleoutsystems/tee-mnist</a>. As baseline, we ran the benchmark on a</p>
+<p>Standard DC8 v2 (8 vcpus, 32 GiB memory) VM where reducer, combiner and client run natively. On the Standard DC8 v2 we also experimented with running only the compute package on a SGX enclave, running the reducer and combiner in the enclave with native compute package execution and by running the entire stack (reducer, combiner and compute package) in the enclave. Finally, we repeated the experiment running the entire stack with AMD SEV on a Standard DC8as v5 (8 vcpus, 32 GiB memory) VM. Note that when running on a single VM with SEV you need to run all of the services on the TEE.</p>
+<p><img alt="Image 6" src="https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/664c58c39ad423c325538f6c_cQYm1_EhlqXE-5QR0kch68Ncf320BdZ41Gkq3OqYY8YyFjnT3fTVTZlAsVZITUU2HZHLcfmTQdTIfBaBju4UYV7Qz4f2nKdqSkN75SMssTgMl6jv5GrCmTgiIydTK4YkL1yQpcDfYkXWTpHFNZNlmlI.png" /></p>
+<p>The plot shows the wall time measured on the reducer for 30 training rounds. <em>SGX package</em> is the benchmark where we only enclose the compute package in the enclave. <em>SGX reducer, combiner</em> is the use case in which we enclosed the reducer and combiner in the enclave, but we run the compute package natively. <em>SGX reducer, combiner, package</em> is the use case in which we run the whole stack in the enclave. Finally, <em>SEV reducer, combiner, package</em> is the use case in which we run the whole stack in an SEV VM.</p>
+<p>Running the compute package in the SGX enclave results in a ~5x performance loss. Surprisingly, running reducer and combiner in the enclave performs slightly better than the baseline. We believe that this is due to the fact that the aggregations performed by reducer and combiner are lightweight and can be performed within the SGX memory constraints. Hence, by running on a lightweight LibOS a slightly better performance can be achieved. This is also reflected when running the whole stack in the enclave where the performance loss is ~4x; lower than in the case in which we only run the compute package in the enclave. Finally, running on AMD SEV results in a ~2x performance loss.</p>
+<h2>Conclusion and future work</h2>
+<p>For applications that don’t exceed SGX memory footprint (~90MB) Intel seems to have an edge on performance; AMD SEV seems to perform better otherwise. However, we noticed that even with the help of the Gramine project, a lot of responsibility for setting up the environments correctly falls on the system administrators. This means that running the stack on TEEs becomes more complicated but one also has more control over it.</p>
+<p>An interesting research perspective consists of finding efficient ways for running Deep Neural Networks (DNNs) on Intel SGX. DarkneTZ <a href="https://paperpile.com/c/Jt1i3W/VCCC">(Mo et al., 2020)</a> is a research effort that explored this on ARM Trustzone and the idea behind it is to run only a few layers in the secure world. A similar approach could be tried on SGX along with other existing strategies to train DNNs on small memory footprint scenarios.</p>
+<h2>References</h2>
+<p><a href="http://paperpile.com/b/Jt1i3W/gpPd">Acar, A., Aksu, H., Selcuk Uluagac, A., &amp; Conti, M. (2019). A Survey on Homomorphic Encryption Schemes. In <em>ACM Computing Surveys</em> (Vol. 51, Issue 4, pp. 1–35). https://doi.org/</a><a href="http://dx.doi.org/10.1145/3214303">10.1145/3214303</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/gt7w">Ekmefjord, M., Ait-Mlouk, A., Alawadi, S., Akesson, M., Singh, P., Spjuth, O., Toor, S., &amp; Hellander, A. (2022). Scalable federated machine learning with FEDn. In <em>2022 22nd IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid)</em>. https://doi.org/</a><a href="http://dx.doi.org/10.1109/ccgrid54584.2022.00065">10.1109/ccgrid54584.2022.00065</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/FQea">Kanstren, T., Lehtonen, S., &amp; Kukkohovi, H. (2015). Opportunities in Using a Secure Element to Increase Confidence in Cloud Security Monitoring. In <em>2015 IEEE 8th International Conference on Cloud Computing</em>. https://doi.org/</a><a href="http://dx.doi.org/10.1109/cloud.2015.159">10.1109/cloud.2015.159</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/9g7c">Koutroumpouchos, N., Ntantogian, C., &amp; Xenakis, C. (2021). Building Trust for Smart Connected Devices: The Challenges and Pitfalls of TrustZone. <em>Sensors</em> , <em>21</em>(2). https://doi.org/</a><a href="http://dx.doi.org/10.3390/s21020520">10.3390/s21020520</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/HNxu">Li, M., Wilke, L., Wichelmann, J., Eisenbarth, T., Teodorescu, R., &amp; Zhang, Y. (2022). A Systematic Look at Ciphertext Side Channels on AMD SEV-SNP. In <em>2022 IEEE Symposium on Security and Privacy (SP)</em>. https://doi.org/</a><a href="http://dx.doi.org/10.1109/sp46214.2022.9833768">10.1109/sp46214.2022.9833768</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/VCCC">Mo, F., Shamsabadi, A. S., Katevas, K., Demetriou, S., Leontiadis, I., Cavallaro, A., &amp; Haddadi, H. (2020). DarkneTZ. In <em>Proceedings of the 18th International Conference on Mobile Systems, Applications, and Services</em>. https://doi.org/</a><a href="http://dx.doi.org/10.1145/3386901.3388946">10.1145/3386901.3388946</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/wL2V">Schunter, M. (2016). Intel Software Guard Extensions. In <em>Proceedings of the 2016 ACM Workshop on Software PROtection</em>. https://doi.org/</a><a href="http://dx.doi.org/10.1145/2995306.2995307">10.1145/2995306.2995307</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/PBMH"><em>Supplemental Information 2: MNIST Dataset and Models for MNIST</em>. (n.d.). https://doi.org/</a><a href="http://dx.doi.org/10.7717/peerj-cs.436/supp-2">10.7717/peerj-cs.436/supp-2</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/VWti">Tsai, C.-C., Porter, D. E., &amp; Vij, M. (2017). {Graphene-SGX}: A Practical Library {OS} for Unmodified Applications on {SGX}. <em>2017 USENIX Annual Technical Conference (USENIX ATC 17)</em>, 645–658.</a></p>
+<p><a href="http://paperpile.com/b/Jt1i3W/i2Kr">Yang, H., &amp; Lee, M. (2020). Demystifying ARM TrustZone TEE Client API using OP-TEE. In <em>The 9th International Conference on Smart Media and Applications</em>. https://doi.org/</a><a href="http://dx.doi.org/10.1145/3426020.3426113">10.1145/3426020.3426113</a></p>
+<p>‍</p>
+    </article>
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+ </main>
+
+    <footer class="container">
+      <nav>
+        <ul>
+          <li>
+            Scaleout&nbsp;
+            <a href="qr.html"> <img width="17" height="auto" src="https://raw.githubusercontent.com/jnsfrd/w/gh-pages/img/qr.svg" alt="QR icon"> </a>
+            &nbsp;<a href="https://github.com/scaleoutsystems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/github/B7B8BB?viewbox=auto" alt="GitHub icon"> </a> 
+            <a href="https://www.linkedin.com/company/scaleout-systems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/linkedin/B7B8BB?viewbox=auto" alt="LinkedIn icon"> </a> 
+            <a href="https://discord.gg/KMg4VwszAd"> <img width="18" height="auto" src="https://cdn.simpleicons.org/discord/B7B8BB?viewbox=auto" alt="Discord icon"> </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <small>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/articles.html" class="contrast">Articles</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+            <a href="/w/pricing.html" class="contrast">Pricing</a>&nbsp; 
+            <a href="/w/terms.html" class="contrast">Terms</a>
+            </small>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+</body>
+</html>

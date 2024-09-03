@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/jnsfrd/w/gh-pages/img/favicon.ico">
+    <link rel="icon" sizes="192x192" href="https://lh3.googleusercontent.com/pw/AP1GczNIltUVyg6K5Gv2vOelHIv7ZSiuy1rWdWljy5U4vjeeAIpKgp-3vc-iskHx_YoqFsKNhNYnbNHpBog5y_W6lSMVDHFtkioGV2xEo76qkMUu39UqKSc06EPjxG-yLYKvx2dMymTto72_EE3etkjJDUOH=w192-h192-s-no-gm?authuser=0">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPm5GpNnyZdcIw9kuWZFEdbbVqNMne7IYq8WoSxevmcVdxddjwMAeIZQVkwdApocm5lMQKJmsMHilrfarYUa0Ce_EMNNWn8M8jrurXtnyArwhpFHxq-WYbcAQoLn86rVRkm02qJS94rkDtG_8DkIJlL=w180-h180-s-no-gm?authuser=0" />
+    <!--- Fix robots.txt and sitemap.xml when record are set at DNS --->
+    
+<title></title>
+
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li>
+            <figure>
+              <a href="/w/index.html" title="Return to homepage">
+                <img src="https://raw.githubusercontent.com/jnsfrd/w/gh-pages/img/scaleout_logo.svg" alt="Logo">
+              </a>
+            </figure>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+<main class="container" style="max-width: 850px;">
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+    <article id="article">
+      <h1>Product Update November</h1>
+<h2>Scaleout Studio</h2>
+<p>In this latest update of the Scaleout Studio platform, we are excited to introduce several enhancements in Scaleout Studio. The update features a revamped user interface, making the setup and management of Federated Learning Networks more intuitive. Key new functionalities include simplified client addition process with direct configuration options, and enhanced training session management. Users can now easily monitor session progress and outcomes, with a clear view of the generated models. These improvements aim to provide a more efficient and user-friendly experience in managing Federated Learning projects.</p>
+<h2>FEDn</h2>
+<p>The latest product release introduces a series of enhancements and bug fixes. The main feature of this release is the new REST-API and the APIClient. Additionally, the documentation has been significantly updated to provide users with a more comprehensive understanding of the software.</p>
+<h4>New Features and Improvements</h4>
+<ul>
+<li>‍<strong>Flush Model Update Queues at New Session + Buffer Size Configuration (Feature/SK-505):</strong> We've updated the global round logic to flush the combiner aggregation queues at the start of every new session, ensuring a clean state for each session. Additionally, the 'buffer size' is now configurable, offering greater flexibility in managing stragglers at time of aggregation.<strong>‍</strong></li>
+<li><strong>Refactor REST and Add APIClient (Feature/SK-523)</strong>: This release introduces a significant refactor of our REST-API. We've implemented a separate service called 'api-server'. Additionally, an APIClient is now available. With this client, users can query the statestore and send requests to the controller, enhancing functionalities like uploading and downloading packages, listing clients, validations, and start sessions without using the dashboard.</li>
+</ul>
+<h4>Bugfixes</h4>
+<ul>
+<li>‍<strong>Fix Printout at Model Staging at Combiner (Bugfix/SK-548):</strong> A minor fix has been made to enhance the print logs for model staging at the combiner, improving the clarity of information during model processing.</li>
+</ul>
+<h4>Additional Features</h4>
+<ul>
+<li>‍<strong>Statestore Initialization from API-Server Lacks Proper Setup (Feature/SK-545):</strong> We addressed an issue where the statestore wasn't properly configured when running the api-server without the dashboard. The "default" argument for the MongoStatestore constructor has been removed, aligning with our practice of using JSON to start session endpoints rather than file-based control settings.</li>
+<li>‍<strong>Add Pagination Option to REST-API (Feature/SK-553):</strong>  We've extended the API server to accept 'limit' and 'skip' parameters, enabling efficient pagination. This feature makes it easier to handle large datasets and improves user experience by breaking down data into manageable portions.</li>
+<li>‍<strong>Global Model Not Created if Combiner Terminates Based on Timeout (Feature/SK-521):</strong> We've rewritten some of the polling in the controller to be more robust. This increases the system's resilience and eliminates the risk of race conditions, especially when the combiner times out. This ensures that the global model is consistently created even in timeout scenarios.<strong>‍</strong></li>
+<li><strong>Add Metadata to gRPC Calls for Python Clients (Feature/SK-574):</strong> A new function has been introduced, allowing Python clients to add metadata (headers) to their gRPC stub calls. This addition enhances the functionality and security for Python clients interacting with our system via gRPC.</li>
+</ul>
+<h4>Documentation Improvements</h4>
+<p>We've made major enhancements to our <a href="https://fedn.readthedocs.io/en/latest/">documentation</a>, including updated guides, expanded API documentation, and enriched technical details. These improvements are designed to provide users with a clearer and more comprehensive understanding of the software.</p>
+<p>Looking ahead, our upcoming releases promise exciting advancements that will further enhance the capabilities and reach of our software. A major development will be related to training of machine learning models that is set to significantly broaden the scope and flexibility of model training and deployment in the Federated Learning (FL) network. More updates about this later. Moreover, we're expanding our client support with the introduction of an Android client, developed in Kotlin, and a C++ client. Their inclusion will undoubtedly cater to a wider range of developers and applications, providing more robust and versatile solutions for different programming environments.</p>
+<p>Furthermore, an important leap forward will be the capability to run all services natively on Windows. This enhancement is poised to significantly streamline operations for Windows users, offering a seamless and more integrated experience. With these forthcoming features, we continue to demonstrate our dedication to innovation, aiming to cater to the evolving needs of our diverse user base and to remain at the forefront of technological advancement in our field.</p>
+<p>These upcoming features underscore our commitment to continuous innovation and our focus on meeting the diverse needs of our user community.</p>
+    </article>
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+ </main>
+
+    <footer class="container">
+      <nav>
+        <ul>
+          <li>
+            Scaleout&nbsp;
+            <a href="qr.html"> <img width="17" height="auto" src="https://raw.githubusercontent.com/jnsfrd/w/gh-pages/img/qr.svg" alt="QR icon"> </a>
+            &nbsp;<a href="https://github.com/scaleoutsystems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/github/B7B8BB?viewbox=auto" alt="GitHub icon"> </a> 
+            <a href="https://www.linkedin.com/company/scaleout-systems"> <img width="18" height="auto" src="https://cdn.simpleicons.org/linkedin/B7B8BB?viewbox=auto" alt="LinkedIn icon"> </a> 
+            <a href="https://discord.gg/KMg4VwszAd"> <img width="18" height="auto" src="https://cdn.simpleicons.org/discord/B7B8BB?viewbox=auto" alt="Discord icon"> </a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <small>
+            <a href="/w/framework.html" class="contrast">Framework</a>&nbsp; 
+            <a href="https://fedn.readthedocs.io/en/stable/index.html" target="_blank" class="contrast">Docs</a>&nbsp; 
+            <a href="/w/articles.html" class="contrast">Articles</a>&nbsp; 
+            <a href="/w/projects.html" class="contrast">Projects</a>&nbsp; 
+            <a href="/w/about.html" class="contrast">About</a>&nbsp; 
+            <a href="/w/pricing.html" class="contrast">Pricing</a>&nbsp; 
+            <a href="/w/terms.html" class="contrast">Terms</a>
+            </small>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+</body>
+</html>
