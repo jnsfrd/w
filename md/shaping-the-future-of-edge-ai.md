@@ -1,7 +1,5 @@
 ﻿# Shaping the future of edge AI
 
-> https://www.scaleoutsystems.com/post/shaping-the-future-of-edge-ai
-
 Artificial intelligence (AI) continues to evolve, and one of the most significant advances in recent years is the concept of Federated Learning (FL). FL enables machine learning models to be trained collaboratively across devices or servers without centralizing data, thus ensuring privacy and efficiency.
 
 However, the expanding field of federated learning (FL) has brought forward a unique set of challenges, especially in cross-device applications.
