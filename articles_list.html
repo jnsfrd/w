@@ -26,9 +26,10 @@
         </div>
     </article>
     <section id="articles">
-        {% set row_count = 0 %}
+        {% for article, placeholder_url in articles_with_urls %}
+        {% if loop.index0 % 3 == 0 %}
         <div class="grid">
-            {% for article, placeholder_url in articles_with_urls %}
+        {% endif %}
             {% if article %}
             <div>
                 <article>
@@ -38,15 +39,11 @@
                     </footer>
                 </article>
             </div>
-            {% set row_count = row_count + 1 %}
             {% endif %}
-            {% if row_count == 3 %}
+        {% if loop.index % 3 == 0 or loop.last %}
         </div>
-        <div class="grid">
-            {% set row_count = 0 %}
-            {% endif %}
-            {% endfor %}
-        </div>
+        {% endif %}
+        {% endfor %}
     </section>
 </main>
 {% endblock %}
