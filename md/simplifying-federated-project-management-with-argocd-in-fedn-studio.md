@@ -1,7 +1,5 @@
 ﻿# Simplifying Federated Project Management with ArgoCD in FEDn Studio
 
-> https://www.scaleoutsystems.com/post/simplifying-federated-project-management-with-argocd-in-fedn-studio
-
 In the realm of distributed systems and federated projects, managing deployments efficiently across multiple environments and projects on kubernetes can be a daunting task. However, with the advent of tools like ArgoCD, this process becomes more streamlined and manageable. In this technical blog post, we'll explore how we leverage ArgoCD to effectively manage multiple federated projects within FEDn Studio. Each project, representing an ArgoCD Custom Resource Definition (CRD) called “application”, will be orchestrated through ArgoCD using a shared helm chart, specifically tailored for federated deployments using FEDn. Furthermore, we'll delve into how FEDn Studio serves not only as a user interface and security for FEDn but also as an interface to ArgoCD, enabling seamless management of project resources within Kubernetes.
 
 ![Image 1](https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/663b67098edc1b5b7d34372a_Screenshot%202024-05-08%20at%2013.48.53.png)
