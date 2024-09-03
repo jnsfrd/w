@@ -1,7 +1,5 @@
 ﻿# Announcing Scaleout Studio
 
-> https://www.scaleoutsystems.com/post/announcing-scaleout-studio
-
 _Our goal at Scaleout is to contribute to secure and privacy-preserving AI in the industry. A current focus is to take federated machine learning (FL) to production. FL allows development of machine learning models over multiple geographically distributed data sources without moving data. This improves_ [_data-access and security_](https://www.scaleoutsystems.com/post/the-copy-problem-in-machine-learning) _for a range of use-cases including predictive maintenance in vehicle fleets, energy optimization for smart buildings, and i_[_mproved analysis of medical images_](https://www.scaleoutsystems.com/post/improving-the-clinical-workflow-with-federated-learning)_._ To this end we have built the [federated learning framework FEDn](https://www.scaleoutsystems.com/post/our-approach-to-scalable-federated-learning).
 
 We're excited to announce Scaleout Studio -  a key addition to our software suite. With Studio we offer a secure and privacy-enhancing ML platform that is simple to install, whether on-site or on a private cloud. It aids in combining privacy-enhancing technologies like FEDn with top open source MLOps (Machine Learning Operations) tools such as Jupyter, MLFlow, Tensorflow Serving, and TorchServe. We envision Studio empowering teams with essential tools for successful machine learning projects, with a clear path to effective use of privacy-enhancing technologies.
