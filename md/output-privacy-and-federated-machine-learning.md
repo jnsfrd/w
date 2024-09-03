@@ -1,7 +1,5 @@
 ﻿# Output Privacy and Federated Machine Learning
 
-> https://www.scaleoutsystems.com/post/output-privacy-and-federated-machine-learning
-
 Federated machine learning (FL) has emerged as a promising approach to privacy-preserving machine learning. By removing the need to centralize data, FL improves [input privacy and solves the copy problem in machine learning](https://www.scaleoutsystems.com/post/the-copy-problem-in-machine-learning). Much current research in FL focuses on various aspects of the computational schemes, such as model aggregation, resource allocation, and system heterogeneity. Security and privacy concerns are also critical areas of focus. Safeguarding the integrity of federated machine learning systems requires a nuanced approach, given the distinctive dynamics of model training in a decentralized environment.
 
 When considering security and privacy requirements of federated learning frameworks, we distinguish between input privacy and output privacy. While input privacy pertains to the forward training process, output privacy is concerned with what can be learned about input data from access to the trained model. Output privacy is a concern for any machine learning model whose predictions are made available to end-users. Deliberate attempts of model stealing or breaches of output privacy are often referred to as _reverse engineering attacks_.
