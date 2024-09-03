@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Articles Index</title>
+{% endblock %}
+
+{% block main %}
+<main class="container">
+    <hgroup>
+        <h1>Articles</h1>
+        <p>Explore expert insights, practical guides, and in-depth articles.</p>
+    </hgroup>
+    <article>
+        <h4>Featured</h4>
+        <div class="grid">
+            <div>
+                <figure>
+                    <img src="{{ featured_info.img_src }}" alt="{{ featured_info.title }}">
+                </figure>
+            </div>
+            <div>
+                <h5>{{ featured_info.title }}</h5>
+                <p>{{ featured_info.first_50_words }}</p>
+                <button class="secondary outline" onclick="location.href='post/{{ featured_info.link }}'">Learn more</button>
+            </div>
+        </div>
+    </article>
+    <section id="articles">
+        {% for article, placeholder_url in articles_with_urls %}
+        {% if loop.index0 % 3 == 0 %}
+        <div class="grid">
+        {% endif %}
+            {% if article %}
+            <div>
+                <article>
+                    <img src="{{ placeholder_url }}" alt="{{ article.title }}" style="width:100%; height:auto;">
+                    <footer>
+                        <a href="post/{{ article.filename }}" class="secondary">Read »</a>
+                    </footer>
+                </article>
+            </div>
+            {% else %}
+            <div></div>
+            {% endif %}
+        {% if loop.index % 3 == 0 or loop.last %}
+            {% if loop.last %}
+                {% for i in range(3 - (loop.index % 3)) %}
+                    <div></div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}
