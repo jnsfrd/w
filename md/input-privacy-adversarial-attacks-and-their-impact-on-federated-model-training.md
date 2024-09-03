@@ -1,7 +1,5 @@
 ﻿# Input Privacy: Adversarial attacks and their impact on federated model training
 
-> https://www.scaleoutsystems.com/post/input-privacy-adversarial-attacks-and-their-impact-on-federated-model-training
-
 Part 1 - The impact of label-flipping attack
 --------------------------------------------
 
