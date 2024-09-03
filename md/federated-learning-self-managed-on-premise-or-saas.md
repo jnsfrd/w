@@ -1,7 +1,5 @@
 ﻿# Federated Learning: Self-managed On-premise or SaaS?
 
-> https://www.scaleoutsystems.com/post/federated-learning-self-managed-on-premise-or-saas
-
 Scaleout offers federated machine learning solutions that maintain data ownership and privacy without central data pooling. Our federated learning framework, FEDn, supports machine learning across distributed datasets like data silos or mobile devices, respecting privacy and cybersecurity requirements. Our SaaS model simplifies access to federated learning technology, enabling users to focus on ML development rather than infrastructure management, especially beneficial during early project development.
 
 FEDn can be deployed on user-specific hardware or virtual private clouds, managed by the user or Scaleout, offering flexible security options for advanced security needs like IP-sensitive ML models. Our goal is to simplify the adoption of federated learning technology for all users.
