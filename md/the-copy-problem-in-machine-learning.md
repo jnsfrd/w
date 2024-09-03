@@ -1,7 +1,5 @@
 ﻿# The copy-problem in machine learning
 
-> https://www.scaleoutsystems.com/post/the-copy-problem-in-machine-learning
-
 ### The copy-problem in machine learning
 
 In traditional machine learning, data is often collected in a central location and used to train a model. This process typically involves making multiple copies of the data, which are stored on various servers or cloud platforms. These copies are then used to train the model, and the resulting model may also be copied and shared with multiple parties. The _copy problem_ arises when sensitive data is inadvertently copied, stored, or transmitted to unauthorized parties, or when copies of the data are not properly secured. For example, if a copy of the data is transmitted over an insecure network, it could be intercepted by malicious actors. But even if we disregard deliberate, malicious actions, over time we might lose control of who has access to copies of data. All in all, it is good security practice to adhere to [_data minimization principles_](https://www.scaleoutsystems.com/post/compliant-machine-learning) and seek to avoid unnecessarily moving or disclosing data.
