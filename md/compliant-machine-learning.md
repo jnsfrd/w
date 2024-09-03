@@ -1,7 +1,5 @@
 ﻿# The path to compliant machine learning
 
-> https://www.scaleoutsystems.com/post/compliant-machine-learning
-
 Food for Thought for Enterprise Data Privacy Officers
 -----------------------------------------------------
 
