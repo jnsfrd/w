@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>{{ title }}</title>
+{% endblock %}
+
+{% block main %}
+<main class="container" style="max-width: 850px;">
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+    <article id="article">
+      {{ content | safe }}
+    </article>
+   <p><a href="../articles.html" class="secondary">« Articles</a></p>
+ </main>
+{% endblock %}
