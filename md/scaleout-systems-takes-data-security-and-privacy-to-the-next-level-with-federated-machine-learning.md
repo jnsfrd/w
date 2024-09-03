@@ -1,7 +1,5 @@
 ﻿# Scaleout takes data security and privacy to the next level with federated machine learning
 
-> https://www.scaleoutsystems.com/post/scaleout-systems-takes-data-security-and-privacy-to-the-next-level-with-federated-machine-learning
-
 ![Image 1](https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/65b760fa2551801eb5c1d6a0_655f41385e81c3a1b240090a_Scaleout_Founders%20(1)%20(1).jpg)
 
 As artificial intelligence (AI) rapidly evolves, the need for improved data security and personal privacy is more urgent than ever. Scaleout Systems, an innovative AI company, addresses this critical challenge and has successfully completed a significant seed funding round. This financing is intended to accelerate the company's development of its unique technology based on federated machine learning, enabling AI to reach its full potential without compromising user data privacy and integrity.
