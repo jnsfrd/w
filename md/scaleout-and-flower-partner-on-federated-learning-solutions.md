@@ -1,7 +1,5 @@
 ﻿# Scaleout and Flower partner on federated learning solutions
 
-> https://www.scaleoutsystems.com/post/scaleout-and-flower-partner-on-federated-learning-solutions
-
 ![Image 1](https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/662636c554a2466a4d69297b_Frame%20122%20(1).jpg)
 
 Scaleout, the company behind the enterprise-grade FEDn federated learning platform, and Flower, the popular open-source federated learning framework, today announced a strategic collaboration. This partnership is to enable developers to seamlessly run Flower federated learning projects on FEDn, including FEDn Studio, Scaleout's managed federated learning service (SaaS or on-premise).
