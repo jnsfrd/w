@@ -1,7 +1,5 @@
 ﻿# Improving the clinical workflow with federated learning
 
-> https://www.scaleoutsystems.com/post/improving-the-clinical-workflow-with-federated-learning
-
 Scaleout has teamed up with partners such as Philips Medical Systems, Barco, Raysearch Laboratories, and several others to try to make things better.
 
 In the ASSIST project we want to create new technology that will make it easier for doctors to do their job. This might mean automating some of the things doctors currently have to do manually. By doing this, doctors can focus more on the patient and less on the computer screen.
