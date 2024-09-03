@@ -1,4 +1,4 @@
-﻿# # The path to compliant machine learning
+﻿# The path to compliant machine learning
 
 > https://www.scaleoutsystems.com/post/compliant-machine-learning
 
