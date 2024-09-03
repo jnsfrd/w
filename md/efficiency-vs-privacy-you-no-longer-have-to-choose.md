@@ -1,7 +1,5 @@
 ﻿# Efficiency vs. Privacy? You no longer have to choose.
 
-> https://www.scaleoutsystems.com/post/efficiency-vs-privacy-you-no-longer-have-to-choose
-
 ### We love AI tools that make us efficient…
 
 Whether we realize it or not, we've all come to appreciate the personal efficiency derived from AI-powered tools. Many of us reclaim hours per day by…
