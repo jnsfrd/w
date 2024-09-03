@@ -1,7 +1,5 @@
 ﻿# Transforming system developers into smart service providers
 
-> https://www.scaleoutsystems.com/post/transforming-system-developers-into-smart-service-providers-with-federated-learning
-
 Consider this scenario; a software development company has created a system for smart buildings. This software allows their clients, who are primarily real estate owners, to collect data from sensors installed throughout their properties. With this data, they can monitor various aspects of their buildings such as energy usage, temperature, and indoor climate.
 
 The company developing this system could greatly benefit from building machine learning models, particularly for tasks like minimizing energy consumption in buildings. The vast amount of data collected from the customers' properties could provide a rich training set for these machine learning models.
