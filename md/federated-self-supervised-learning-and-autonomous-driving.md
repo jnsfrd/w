@@ -1,7 +1,5 @@
 ﻿# Federated self-supervised learning and autonomous driving
 
-> https://www.scaleoutsystems.com/post/federated-self-supervised-learning-and-autonomous-driving
-
 Autonomous vehicles generate a massive amount of data from sensors like cameras, LiDAR, and radar. This data can be highly valuable for AI development as it contains information about day-to-day interactions in traffic. Specifically, image data can be used to train foundational computer vision models that can then be used to solve problems in autonomous driving.
 
 However, there are fundamental challenges to scale up machine learning in vehicle fleets:
