@@ -1,7 +1,5 @@
 ﻿# Enhancing IoT security with federated learning
 
-> https://www.scaleoutsystems.com/post/enhancing-iot-security-with-federated-learning
-
 Digitalization's growth has made the Internet of Things (IoT) important in sectors like healthcare and manufacturing, but it also raises cybersecurity concerns. IoT networks are increasingly targeted by cyber threats. In this project we utilize federated learning to develop an advanced intrusion detection system (IDS) for IoT, focusing on effectiveness and data privacy.
 
 The connected nature of IoT systems makes them vulnerable to various cyber threats, threatening privacy and operational integrity. While IoT data is vital for system optimization, its data sharing poses privacy concerns. The varied and diverse nature of IoT data complicates security efforts. A sophisticated security strategy is needed to handle the diverse data types and ensure privacy. Our project seeks to tackle these issues, focusing on enhancing security while considering the complexities of IoT data privacy.
