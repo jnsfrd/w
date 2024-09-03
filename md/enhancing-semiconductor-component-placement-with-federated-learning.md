@@ -1,7 +1,5 @@
 ﻿# Enhancing semiconductor component placement with federated learning
 
-> https://www.scaleoutsystems.com/post/enhancing-semiconductor-component-placement-with-federated-learning
-
 ![Image 1](https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/66cd75cd4ca6e352a6598d48_66cd759fad7a660cf5774be0_pnp%2520(1).webp)
 
 Precision is crucial in the field of semiconductor manufacturing. Mycronic, a leader in this domain, is exploring cutting-edge approaches to enhance their Pick and Place (PnP) machines, which are responsible for placing semiconductor components on circuit boards. Access to a plentiful AI model-training data set is essential for the ML algorithm supporting the precision of the PnP machines to perform well. However, the data sets needed for AI-model training are sensitive and to a large extent owned by Myronic’s customers.
