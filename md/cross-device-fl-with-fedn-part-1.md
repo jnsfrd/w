@@ -1,7 +1,5 @@
 ﻿# Cross-device FL with FEDn Part 1
 
-> https://www.scaleoutsystems.com/post/cross-device-fl-with-fedn-part-1
-
 A local development environment for intermittent client connections
 -------------------------------------------------------------------
 
