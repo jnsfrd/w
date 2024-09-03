@@ -1,7 +1,5 @@
 ﻿# Leveraging JWT Authentication for Secure Client and Admin API Access in FEDn Studio
 
-> https://www.scaleoutsystems.com/post/leveraging-jwt-authentication-for-secure-client-and-admin-api-access-in-fedn-studio
-
 In the dynamic landscape of modern web development, security stands as a paramount concern. With the proliferation of APIs driving interactions between clients and servers, implementing robust authentication mechanisms is essential. JSON Web Tokens (JWT) have emerged as a popular choice, offering a secure and efficient method for authenticating and authorizing users. In this technical blog post, we'll explore how JWT’s can be leveraged for both client and admin API access to authenticate federated clients to FEDn Studio.
 
 ![Image 1](https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/663b67f86e39d1e35285ad37_Screenshot%202024-05-08%20at%2013.48.48.png)
