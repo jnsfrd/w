@@ -1,7 +1,5 @@
 ﻿# AI and big data in cancer treatment
 
-> https://www.scaleoutsystems.com/post/ai-and-big-data-in-cancer-treatment
-
 Cancer, affecting one in three individuals in their lifetime, often requires complex treatment processes like radiotherapy. Using radiation to destroy tumors demands meticulous planning and considerable time. However, recent advancements in deep learning can potentially transform this field radically, making treatment planning more efficient by automating time-consuming tasks. Developing AI models capable of handling millions of parameters requires extensive data sets. In medical imaging, this is challenging due to strict GDPR and ethical regulations, making acquisition of large-scale data difficult.
 
 The ASSIST project aims to optimize and simplify workflows in image-guided therapy procedures, with a key focus on addressing data accessibility challenges. Federated learning, with Scaleout as the underlying technology provider, is a central solution in this effort.
