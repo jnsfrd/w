@@ -6,9 +6,7 @@ Our new example project demonstrates how one can make use of the popular Hugging
 
 Email communication often contains personal and sensitive information, and privacy regulations may prevent the collection of data in a central storage for model training. Federated learning is a privacy preserving machine learning technique that enables the training of models on decentralized data sources. Fine-tuning large language models (LLMs) on various data sources enhances both accuracy and generalizability. In the example we provide, the Enron email spam dataset is split among two clients. The BERT-tiny model is fine-tuned on the client data using federated learning to predict whether an email is spam or not.
 
-To run the example, follow the steps described at:
-
-[https://github.com/scaleoutsystems/fedn/tree/master/examples/huggingface](https://github.com/scaleoutsystems/fedn/tree/master/examples/huggingface)
+To run the example, follow the steps described at: [https://github.com/scaleoutsystems/fedn/tree/master/examples/huggingface](https://github.com/scaleoutsystems/fedn/tree/master/examples/huggingface)
 
 FEDn studio visualizes the training progress by plotting test loss and accuracy, as shown in the plot below.  After running the example for only a few rounds in FEDn studio, the BERT-tiny model, fine-tuned via federated learning, is able to detect spam emails on the test dataset with high accuracy (~99%). Run the example yourself or adapt it to your own use-case!
 
