@@ -1,7 +1,5 @@
 ﻿# Federated multi-task learning
 
-> https://www.scaleoutsystems.com/post/federated-multi-task-learning
-
 Federated Learning (FL)
 -----------------------
 
