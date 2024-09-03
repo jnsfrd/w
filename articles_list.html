@@ -28,6 +28,7 @@
     <section id="articles">
         <div class="grid">
             {% for article, placeholder_url in articles_with_urls %}
+            {% if article %}
             <div>
                 <article>
                     <img src="{{ placeholder_url }}" alt="{{ article.title }}" style="width:100%; height:auto;">
@@ -36,7 +37,8 @@
                     </footer>
                 </article>
             </div>
-            {% if loop.index % 3 == 0 %}
+            {% endif %}
+            {% if loop.index % 3 == 0 and not loop.last %}
         </div>
         <div class="grid">
             {% endif %}
