@@ -1,7 +1,5 @@
 ﻿# Product Update November
 
-> https://www.scaleoutsystems.com/post/product-update-november
-
 Scaleout Studio
 ---------------
 
