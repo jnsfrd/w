@@ -1,6 +1,6 @@
 ﻿# Enhancing semiconductor component placement with federated learning
 
-![Image 1]([https://cdn.prod.website-files.com/65b2c538561625e62bd16a2a/66cd75cd4ca6e352a6598d48_66cd759fad7a660cf5774be0_pnp%2520(1).webp](https://lh3.googleusercontent.com/pw/AP1GczPrgEmvxPHzYQO5xtObzd4sV8PNGlmcbAufE4iKOR5D3OiKknI9B40UhixXecnljG7RJg8Dl2jCyYUrNiHMs026Buy64JtV0Ff29Bp5XHixXhr34Sd_LqGjS3O3u071jzbvjNZcfEWqfX8p43O0Hkf7=w800-h500-s-no-gm))
+![Image 1](https://lh3.googleusercontent.com/pw/AP1GczPrgEmvxPHzYQO5xtObzd4sV8PNGlmcbAufE4iKOR5D3OiKknI9B40UhixXecnljG7RJg8Dl2jCyYUrNiHMs026Buy64JtV0Ff29Bp5XHixXhr34Sd_LqGjS3O3u071jzbvjNZcfEWqfX8p43O0Hkf7=w800-h500-s-no-gm)
 
 Precision is crucial in the field of semiconductor manufacturing. Mycronic, a leader in this domain, is exploring cutting-edge approaches to enhance their Pick and Place (PnP) machines, which are responsible for placing semiconductor components on circuit boards. Access to a plentiful AI model-training data set is essential for the ML algorithm supporting the precision of the PnP machines to perform well. However, the data sets needed for AI-model training are sensitive and to a large extent owned by Myronic’s customers.
 
