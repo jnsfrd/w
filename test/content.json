@@ -1,3 +1,6 @@
 {
-    "content": "This is a simple HTML page created to demonstrate the basic structure of an HTML document. It includes headings, paragraphs, links, and an image."
+    "heading1": "About This Page",
+    "paragraph1": "This is the content for the first paragraph.",
+    "heading2": "Additional Information",
+    "paragraph2": "This is the content for the second paragraph."
 }
