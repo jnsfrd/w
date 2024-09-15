@@ -4,6 +4,8 @@ description: "Discover how to effectively integrate Large Language Models (LLMs)
 date: 2024-09-15
 author: "Your Name"
 tags: [LLMs, Production Workflow, AI, Machine Learning]
+draft: true
+destination: "https://www.scaleoutsystems.com/blog"
 ---
 
 # Integrating LLMs into Your Production Workflow: A Complete Guide
