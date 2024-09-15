@@ -2,7 +2,7 @@
 
 One Paragraph of project description goes here
 
-![Image](https://placehold.co/980x300/dodgerblue/white)
+![Image](https://placehold.co/980x400/dodgerblue/white)
 
 ## Getting Started
 
