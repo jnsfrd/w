@@ -44,3 +44,6 @@
           padding: 0.8em 1em; /* Optional: adjust padding to scale the button itself */
         }
       }
+      .spacer {
+        margin-bottom: 4rem;
+      }
